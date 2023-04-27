@@ -1,53 +1,248 @@
 :root {
-    --darkblue: #355E6E;
-    --lightblue: #6CA4BA;
-  }
-   
-body{
-    margin: 0;
-    background-color: var(--lightblue);
+  --darkblue: #355e6e;
+  --lightblue: #6ca4ba;
+}
+body {
+  margin: 0;
+  background-color: var(--lightblue);
 }
 @font-face {
-    font-family: "Whitefish" ;
-    src: url(/fonts/Whitefish\ FREE.ttf) format("truetype");
+  font-family: "Whitefish";
+  src: url(/fonts/Whitefish\ FREE.ttf) format("truetype");
 }
-header{
-    background-color: var(--darkblue);
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
+footer {
+  background-color: var(--darkblue);
+  color: white;
+  padding: 10px;
+  margin-top: 100px;
 }
-p{
-    font-family: 'Roboto', sans-serif;
+.footerList li {
+  list-style: none;
 }
-header ul li{
-    list-style: none;
-    margin: 30px 0;
+main{
+  min-height: 90vh;
 }
-header ul a{
-    color: white;
-    text-decoration: none;
+header {
+  background-color: var(--darkblue);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+p {
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-family: "Whitefish";
+  font-size: 3em;
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+}
+h2,h3{
     font-family: "Whitefish";
-    font-size: 25px;
-}
-header ul{
+    font-size: 2em;
     width: fit-content;
-    padding: 0;
+    text-align: center;
+    margin: 24px auto;
 }
-.logo{
-    border-radius: 100%;
-    max-height: 100px;
-    min-width: 220px;
+h3{
+    font-size: 1.2em ;
 }
-.logoCon{
+header ul li {
+  list-style: none;
+  margin: 30px 0;
+}
+header ul a,
+.footerList li {
+  color: white;
+  text-decoration: none;
+  font-family: "Whitefish";
+  font-size: 25px;
+}
+.footerList li {
+  font-size: 18px;
+}
+header ul {
+  width: fit-content;
+  padding: 0;
+}
+.logo {
+  border-radius: 100%;
+  max-height: 100px;
+  min-width: 220px;
+}
+.logoCon {
+  margin: 0 auto;
+}
+.fa-x {
+  margin-top: 20px;
+}
+.fa-solid {
+  color: white;
+}
+nav {
+  margin-top: 50px;
+  border: 2px solid white;
+  padding: 0 10px;
+}
+/*Home page*/
+.indexImgCon img {
+  min-width: 100vw;
+  max-height: 150px;
+  opacity: 80%;
+}
+/*About page*/
+.bodyWithBackgroundImage {
+  background-image: url(/pictures/resized\ background\ 2.jpg);
+  background-size: auto;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+}
+.mainContent {
+  max-width: 80vw;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10%;
+  padding: 30px;
+  margin: 100px auto 0 auto;
+}
+/*minimum size page*/
+.measuring img{
+    max-width: 80vw;
+}
+.measuring{
     margin: 0 auto;
+    width: fit-content;
 }
-.fa-solid{
-    color: white;
+table, tr, td{
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px;
 }
-nav{
-    margin-top: 50px;
+.tableCon{
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+.diffSize{
+   margin: 30px auto 100px auto;  
+}
+/*Contact page*/
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form div{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+form label{
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  font-family: "Whitefish";
+}
+::placeholder{
+  color: black;
+}
+form input:focus, #text:focus{
+  background-color: var(--darkblue);
+  color: white;
+}
+form input,#text{
+  min-width: 200px;
+  background-color: var(--lightblue);
+  border: solid 2px black;
+  min-height: 30px;
+}
+.submitBtn{
+  min-height: 40px;
+  font-size: large;
+  font-family: "Whitefish";
+}
+@media screen and (min-width: 701px) {
+  .logo {
+    border-radius: 100%;
+    max-height: 150px;
+    min-width: 300px;
+  }
+  header {
+    padding: 8px 8px 0 8px;
+  }
+  .fa-xl {
+    display: none;
+  }
+  nav {
+    border: none;
+    margin-top: 30px;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  nav ul li {
+    margin: 0 30px 20px 30px;
     border: 2px solid white;
     padding: 10px;
+    min-width: 116px;
+    text-align: center;
+  }
+
+  @keyframes navAnimation {
+    0% {
+    }
+    100% {
+      background-color: black;
+    }
+  }
+  nav li:hover {
+    animation-name: navAnimation;
+    animation-delay: 0.2s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  /*Home page*/
+  .indexImgCon img {
+    min-width: 700px;
+    max-height: 200px;
+  }
+  .indexImgCon {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  /*About page*/
+  .mainContent{
+    max-width: 700px;
+  }
+  /*minimum size page*/
+    .measuring img{
+      max-width: 100%;
+    }
+    /*Contact page*/
+    form{
+      display: grid;
+      grid-template-columns:repeat(2,1fr);
+      grid-template-rows: repeat(3,150px) !important;
+      justify-items: center;
+    }
+    .textfield{
+      grid-row: 1/-1;
+      grid-column: 2/3;
+    }
+    .name, .subject,.email{
+      grid-column: 1/2;
+    }
+    .submitBtn{
+      grid-column: 1/-1;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+
 }

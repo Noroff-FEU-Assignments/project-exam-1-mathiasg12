@@ -11,9 +11,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Document</title>
+    <title>Contact-us</title>
   </head>
-  <body>
+  <body class="bodyWithBackgroundImage">
     <header>
       <div class="logoCon">
         <a href="index.html"
@@ -34,7 +34,44 @@
         </ul>
       </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <section class="mainContent">
+        <h1>Contact us</h1>
+        <p>
+          if you have any questions you can send us an email at:
+          fishNorway@gmail.com Or use the contact form below and we will answer
+          you by email
+        </p>
+      </section>
+      <section class="mainContent">
+        <h2>Contact form</h2>
+        <form>
+          <div class="name">
+          <label for="name">Name</label>
+          <input type="text" id="name">
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input type="text" id="email">
+        </div>
+        <div class="subject">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject">
+        </div>
+        <div class="textfield">
+          <label for="text">Message</label>
+          <textarea name="textfield" id="text" cols="25" rows="20" placeholder="write your message here"></textarea>
+        </div>
+        <input type="submit" value="Send" class="submitBtn">
+        </form>
+      </section>
+    </main>
+    <footer>
+      <ul class="footerList">
+        <li>Phone: 99999999</li>
+        <li>Email: fishNorway@gmail.com</li>
+        <li>copyright &copy;</li>
+      </ul>
+    </footer>
   </body>
 </html>
