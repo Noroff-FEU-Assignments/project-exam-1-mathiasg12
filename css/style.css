@@ -166,6 +166,14 @@ form label {
 ::placeholder {
   color: black;
 }
+.errorLabel{
+  color: red;
+  text-align: center;
+  font-size: 1em;
+}
+.errorInput{
+  border: 4px solid red !important;
+}
 form input:focus,
 #text:focus {
   background-color: var(--darkblue);
@@ -250,9 +258,10 @@ form input,
   nav ul {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 0;
   }
   nav ul li {
-    margin: 0 0 20px 30px;
+    margin: 0 0 10px 30px;
     border: 2px solid white;
     padding: 10px;
     min-width: 116px;
