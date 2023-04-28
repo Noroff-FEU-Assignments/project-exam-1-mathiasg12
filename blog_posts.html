@@ -25,7 +25,6 @@
       </div>
       <i class="fa-solid fa-bars fa-xl"></i>
       <nav>
-        <i class="fa-solid fa-x fa-xl"></i>
         <ul>
           <li><a href="blog_posts.html">Posts</a></li>
           <li><a href="size.html">Minimum size</a></li>
@@ -34,13 +33,31 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <h1>blog Posts</h1>
+      <section class="sort">
+        <label for="search" hidden></label>
+        <input type="text" id="search" placeholder="Search">
+        <div>
+          <label for="select">Sort by:</label>
+          <select name="select" id="select">
+            <option value="oldest" selected>oldest first</option>
+            <option value="Newest">Newest first</option>
+            <option value="featured">Featured first</option>
+          </select>
+          <section>
+            <h2>Loading.....</h2>
+          </section>
+        </div>
+      </section>
+    </main>
     <footer>
      <ul class="footerList">
       <li>Phone: 99999999</li>
       <li>Email: fishNorway@gmail.com</li>
       <li>copyright &copy;</li>
      </ul> 
+     <script src="/js/function.js"></script>
     </footer>
   </body>
 </html>

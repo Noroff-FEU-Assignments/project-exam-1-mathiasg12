@@ -19,7 +19,7 @@ footer {
 .footerList li {
   list-style: none;
 }
-main{
+main {
   min-height: 90vh;
 }
 header {
@@ -28,6 +28,10 @@ header {
   display: flex;
   flex-direction: column;
   padding: 8px;
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  top: 0;
 }
 p {
   font-family: "Roboto", sans-serif;
@@ -39,15 +43,16 @@ h1 {
   width: fit-content;
   text-align: center;
 }
-h2,h3{
-    font-family: "Whitefish";
-    font-size: 2em;
-    width: fit-content;
-    text-align: center;
-    margin: 24px auto;
+h2,
+h3 {
+  font-family: "Whitefish";
+  font-size: 2em;
+  width: fit-content;
+  text-align: center;
+  margin: 24px auto;
 }
-h3{
-    font-size: 1.2em ;
+h3 {
+  font-size: 1.2em;
 }
 header ul li {
   list-style: none;
@@ -70,27 +75,37 @@ header ul {
 .logo {
   border-radius: 100%;
   max-height: 100px;
-  min-width: 220px;
 }
 .logoCon {
   margin: 0 auto;
 }
-.fa-x {
-  margin-top: 20px;
-}
-.fa-solid {
+.fa-bars,.fa-x  {
+  margin-bottom: 8px;
   color: white;
 }
 nav {
-  margin-top: 50px;
+  transform: translatey(-50px);
+  opacity: 0;
   border: 2px solid white;
   padding: 0 10px;
+  height: 0;
+  pointer-events: none;
+}
+.navOn{
+  height: fit-content;
+  transform: translatey(0);
+  transition: 1s ease-in-out;
+  opacity: 1;
+  pointer-events: all;
+  margin-top: 20px;
+  max-width: 80vw;
 }
 /*Home page*/
 .indexImgCon img {
   min-width: 100vw;
   max-height: 150px;
   opacity: 80%;
+  margin-top: 130px;
 }
 /*About page*/
 .bodyWithBackgroundImage {
@@ -108,67 +123,112 @@ nav {
   margin: 100px auto 0 auto;
 }
 /*minimum size page*/
-.measuring img{
-    max-width: 80vw;
+.measuring img {
+  max-width: 80vw;
 }
-.measuring{
-    margin: 0 auto;
-    width: fit-content;
+.measuring {
+  margin: 0 auto;
+  width: fit-content;
 }
-table, tr, td{
-    border: 2px solid black;
-    text-align: center;
-    padding: 10px;
+table,
+tr,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
 }
-.tableCon{
+.tableCon {
   overflow-x: auto;
   margin-bottom: 20px;
 }
-.diffSize{
-   margin: 30px auto 100px auto;  
+.diffSize {
+  margin: 30px auto 100px auto;
 }
 /*Contact page*/
-form{
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-form div{
+form div {
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
 }
-form label{
+form label {
   margin-bottom: 5px;
   font-size: 1.5em;
   font-family: "Whitefish";
 }
-::placeholder{
+::placeholder {
   color: black;
 }
-form input:focus, #text:focus{
+form input:focus,
+#text:focus {
   background-color: var(--darkblue);
   color: white;
 }
-form input,#text{
+form input,
+#text {
   min-width: 200px;
   background-color: var(--lightblue);
   border: solid 2px black;
   min-height: 30px;
 }
-.submitBtn{
+.submitBtn {
   min-height: 40px;
   font-size: large;
   font-family: "Whitefish";
 }
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 720px) {
+  /*Home page*/
+  .indexImgCon img {
+    min-width: 700px;
+    max-height: 200px;
+    margin-top: 0px;
+  }
+  .indexImgCon {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  /*About page*/
+  .mainContent {
+    max-width: 700px;
+  }
+  /*minimum size page*/
+  .measuring img {
+    max-width: 100%;
+  }
+  /*Contact page*/
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 150px) !important;
+    justify-items: center;
+  }
+  .textfield {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+  }
+  .name,
+  .subject,
+  .email {
+    grid-column: 1/2;
+  }
+  .submitBtn {
+    grid-column: 1/-1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  main{
+    margin-top: 400px;
+  }
   .logo {
     border-radius: 100%;
     max-height: 150px;
-    min-width: 300px;
   }
   header {
     padding: 8px 8px 0 8px;
@@ -177,23 +237,47 @@ form input,#text{
     display: none;
   }
   nav {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
     border: none;
+    height: fit-content;
     margin-top: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
   }
   nav ul {
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
     flex-wrap: wrap;
   }
   nav ul li {
-    margin: 0 30px 20px 30px;
+    margin: 0 0 20px 30px;
     border: 2px solid white;
     padding: 10px;
     min-width: 116px;
     text-align: center;
   }
-
+  nav ul li:first-child{
+    margin-left: 0;
+  }
+  .smallHeader{
+    max-height: 140px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center ;
+  }
+  .smallLogoCon{
+    width: fit-content;
+    margin: 0;
+  }
+  .smallList{
+    margin-left: 30px !important;
+  }
+  .smallLogo{
+    max-height: 100px;
+  }
   @keyframes navAnimation {
     0% {
     }
@@ -207,42 +291,4 @@ form input,#text{
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
-  /*Home page*/
-  .indexImgCon img {
-    min-width: 700px;
-    max-height: 200px;
-  }
-  .indexImgCon {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  /*About page*/
-  .mainContent{
-    max-width: 700px;
-  }
-  /*minimum size page*/
-    .measuring img{
-      max-width: 100%;
-    }
-    /*Contact page*/
-    form{
-      display: grid;
-      grid-template-columns:repeat(2,1fr);
-      grid-template-rows: repeat(3,150px) !important;
-      justify-items: center;
-    }
-    .textfield{
-      grid-row: 1/-1;
-      grid-column: 2/3;
-    }
-    .name, .subject,.email{
-      grid-column: 1/2;
-    }
-    .submitBtn{
-      grid-column: 1/-1;
-      max-width: 200px;
-      margin: 0 auto;
-    }
-
-
 }
