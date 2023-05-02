@@ -21,6 +21,7 @@ footer {
 }
 main {
   min-height: 90vh;
+  margin-top: 200px;
 }
 header {
   background-color: var(--darkblue);
@@ -190,6 +191,25 @@ form input,
   min-height: 40px;
   font-size: large;
   font-family: "Whitefish";
+}
+.submitBtn:hover, .submitBtn:focus{
+  background-color: white;
+  color: black;
+  font-size: 1.5em;
+}
+/*thank you page*/
+#continue{
+  color: white;
+  background-color: black;
+  padding: 8px;
+  border-radius: 10%;
+  text-decoration: none;
+  width: fit-content;
+}
+.thank_you{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 720px) {
   /*Home page*/

@@ -11,7 +11,7 @@ bars.addEventListener("click", () => {
   bars.classList.toggle("fa-bars");
 });
 document.addEventListener("scroll", () => {
-  if (window.scrollY >= 200) {
+  if (window.scrollY >= 100) {
     header.classList.add("smallHeader");
     logo.classList.add("smallLogo");
     logoCon.classList.add("smallLogoCon");
