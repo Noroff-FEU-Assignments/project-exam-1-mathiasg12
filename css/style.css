@@ -104,9 +104,35 @@ nav {
 /*Home page*/
 .indexImgCon img {
   min-width: 100vw;
-  max-height: 150px;
+  max-height: 120px;
   opacity: 80%;
   margin-top: 130px;
+}
+.latestCon{
+  display: flex;
+  flex-wrap:nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+.thumbnailLatest{
+  background-color: white;
+  max-width: 200px;
+  padding-bottom: 10px;
+  margin: 10px 20px;
+  border: solid 5px black;
+}
+.arrows{
+  margin: 30px auto;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.thumbNailImg{
+  width: 200px;
+  height: 200px;
 }
 /*About page*/
 .bodyWithBackgroundImage {
