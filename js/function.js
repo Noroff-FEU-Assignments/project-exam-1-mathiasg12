@@ -3,7 +3,6 @@ const nav = document.querySelector("nav");
 const header = document.querySelector("header");
 const logo = document.querySelector(".logo");
 const logoCon = document.querySelector(".logoCon");
-const body = document.querySelector("main");
 const navList= document.querySelector("nav ul li")
 bars.addEventListener("click", () => {
   nav.classList.toggle("navOn");

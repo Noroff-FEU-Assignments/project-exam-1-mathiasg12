@@ -40,7 +40,7 @@ async function renderCarousel() {
       try {
         let arrayPic = await featuredPicture.json();
         let posts = postsArray[i];
-        latestPosts.innerHTML += `<div class="thumbnailLatest"><img src="${arrayPic.source_url}" class="thumbNailImg"></img><h3>${posts.title.rendered}</h3></div>`;
+        latestPosts.innerHTML += `<a class="thumbnailLatest" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}" class="thumbNailImg"></img><h3>${posts.title.rendered}</h3></a>`;
       } catch (error) {
         console.log(error);
       }
@@ -66,7 +66,7 @@ async function RenderBasedonCategory(category,con, h2, h2text, thumbClass){
       );
       try {
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += `<div class="${thumbClass}"><img src="${arrayPic.source_url}"></img><h3>${posts.title.rendered}</h3></div>`;
+        con.innerHTML += `<a class="${thumbClass}" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}"></img><h3>${posts.title.rendered}</h3></a>`;
       } catch (error) {
         console.log(error);
       }
