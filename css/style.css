@@ -367,11 +367,11 @@ form input,
 .bigImage{
  width: 800px !important;
  height: 450px !important;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  margin-left:-400px;
-  margin-top: -150px;
+ position: fixed;
+ left: 50%;
+ top: 50%;
+ margin-left:-400px;
+ margin-top: -150px;
 }
 
   /*Contact page*/

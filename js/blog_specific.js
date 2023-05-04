@@ -4,7 +4,7 @@ let querrySearch= document.location.search;
 let newParameter= new URLSearchParams(querrySearch);
 let idParameter= newParameter.get("id")
 let newUrl= baseUrl + idParameter;
-const num= Number
+const body= document.querySelector("body")
 let json= await urlFunction(newUrl)
 const con= document.querySelector(".speCon");
 const title= document.querySelector("title");
@@ -18,5 +18,8 @@ renderBlog();
 document.addEventListener("click",(myClick)=>{
     if(myClick.target.hasAttribute('srcset')){
       myClick.target.classList.add("bigImage")
+    }
+    else{
+      document.querySelector(".bigImage").classList.remove("bigImage");
     }
 })
