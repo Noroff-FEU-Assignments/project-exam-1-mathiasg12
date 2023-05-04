@@ -23,4 +23,14 @@ document.addEventListener("scroll", () => {
     navList.classList.remove("smallList")
   }
 });
+export const urlFunction= async function getPost(url) {
+  try {
+    const resp = await fetch(url);
+    const apiJson = await resp.json();
+    return apiJson;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
