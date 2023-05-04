@@ -365,8 +365,8 @@ form input,
   max-height: 300px;
 }
 .bigImage{
-  max-width: 800px !important;
-  max-height: 450px !important;
+ width: 800px !important;
+ height: 450px !important;
   position: fixed;
   left: 50%;
   top: 50%;
