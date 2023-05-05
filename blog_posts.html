@@ -36,20 +36,21 @@
     <main>
       <h1>blog Posts</h1>
       <section class="blogPosts">
-        <div>
-        <label for="search" hidden></label>
-        <input type="text" id="search" placeholder="Search">
-      </div>
-        <div>
-          <label for="select">Sort by:</label>
-          <select name="select" id="select">
-            <option value="oldest" selected>oldest first</option>
-            <option value="Newest">Newest first</option>
-            <option value="featured">Featured first</option>
-          </select>
-        </div>
           <section class="results">
             <h2>Loading.....</h2>
+            <div class="sortingElements">
+            <div class="search">
+              <label for="search" hidden></label>
+              <input type="text" id="search" placeholder="Search">
+            </div>
+              <div class="order">
+                <label for="select" hidden>Sort by:</label>
+                <select name="select" id="select">
+                  <option value="newest" selected id="newest">Newest first</option>
+                  <option value="oldest"id="oldest">oldest first</option>
+                </select>
+              </div>
+            </div>
             <div class="blogCon">
             </div>
             <button class="load">Load more</button>

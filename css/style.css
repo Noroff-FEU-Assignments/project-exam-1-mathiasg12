@@ -223,6 +223,26 @@ nav {
   width: 60vw;
   border: 1px solid white;
 }
+.search,.order{
+  margin: 50px auto 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.order{
+  margin-top: 20px;
+}
+.search input,.order select{
+  min-height: 25px;
+  background-color: var(--darkblue);
+  color: white;
+  border: 2px solid white;
+}
+.order select{
+  min-height: 30px;
+}
+.search input::placeholder{
+  color: white;
+}
 /*specific page*/
 .speCon {
   background-color: white;
@@ -494,6 +514,24 @@ form input,
   /*blog posts page*/
 .load{
   width: 432px;
+}
+.sortingElements{
+  display: flex;
+  width: 700px;
+  align-items: last baseline;
+  justify-content: first baseline;
+}
+.order{
+  display: flex;
+  flex-direction: column;
+}
+.order label{
+  margin-bottom: 5px;
+}
+.search,.order{
+  margin: 80px 20px 0 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
   /*Contact page*/
   form {
