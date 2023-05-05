@@ -17,7 +17,7 @@ footer {
   padding: 10px;
   margin-top: 100px;
 }
-a{
+a {
   text-decoration: none;
   color: black;
 }
@@ -26,7 +26,7 @@ a{
 }
 main {
   min-height: 90vh;
-  margin-top: 150px;
+  margin-top: 180px;
 }
 header {
   background-color: var(--darkblue);
@@ -57,10 +57,12 @@ h3 {
   font-size: 2.5em;
   width: fit-content;
   text-align: center;
-  margin: 40px auto 15px auto;
+  margin: 80px auto 15px auto;
 }
 h3 {
   font-size: 1.5em;
+  margin: 40px auto 40px auto;
+  padding: 10px;
 }
 header ul li {
   list-style: none;
@@ -84,7 +86,6 @@ header ul {
   border-radius: 100%;
   border: 2px solid white;
   max-height: 100px;
-  
 }
 .logoCon {
   margin: 0 auto;
@@ -94,7 +95,6 @@ header ul {
   margin-bottom: 8px;
   margin-left: 6px;
   color: white;
-  
 }
 nav {
   transform: translatey(-50px);
@@ -115,15 +115,25 @@ nav {
   max-width: 80vw;
 }
 /*Home page*/
+.indexMain{
+  margin-top: 130px;
+}
+.indexImgCon{
+  opacity: 80%;
+  background-color: white;
+  width: 100vw;
+  padding-bottom: 20px;
+}
+
 .indexImgCon img {
   min-width: 100vw;
-  max-height: 120px;
+  max-height: 50vw;
   opacity: 80%;
 }
 .recomendedCon,
 .featured,
-.latestCon {
-  margin: 100px auto;
+.latest_posts {
+  margin: 100px auto 100px auto;
 }
 .latestCon {
   display: flex;
@@ -133,9 +143,6 @@ nav {
   overflow-y: hidden;
   max-width: 90vw;
 }
-.latest_posts {
-  margin: 80px auto;
-}
 .thumbnailLatest {
   background-color: white;
   max-width: 150px;
@@ -144,8 +151,29 @@ nav {
   margin: 10px 20px;
   border: solid 2px black;
 }
-.thumbnailLatest h3,.featuredCon h3,.recoCon h3{
- margin: 20px auto;
+.thumbnailLatest h3,
+.featuredCon h3,
+.recoCon h3 {
+  margin: 20px auto;
+  padding: 5px 5px 5px 5px;
+}
+@keyframes PostsAnimation {
+  0% {
+  }
+  100% {
+    opacity: 40%;
+  }
+}
+.thumbnailLatest:hover,
+.thumbFeatured:hover,
+.thumbReco:hover,
+.thumbnailLatest:focus,
+.thumbFeatured:focus,
+.thumbReco:focus {
+  animation-name: PostsAnimation;
+  animation-delay: 0.3s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 .arrows {
   margin: 30px auto;
@@ -154,7 +182,7 @@ nav {
   justify-content: space-between;
 }
 .featuredCon,
-.recoCon {
+.recoCon,.blogCon {
   display: flex;
   flex-wrap: wrap;
   width: fit-content;
@@ -183,9 +211,21 @@ nav {
 .recoCon img {
   width: 80vw;
 }
+/*blog posts page*/
+.results{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.load{
+  color: white;
+  background-color: var(--darkblue);
+  width: 60vw;
+  border: 1px solid white;
+}
 /*specific page*/
-.speCon{
-  background-color: white ;
+.speCon {
+  background-color: white;
   padding: 20px;
   max-width: 100vw;
   overflow-x: hidden;
@@ -193,27 +233,27 @@ nav {
   margin: 0 auto;
   border: 2px solid black;
 }
-.speCon div{
+.speCon div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.speCon p{
+.speCon p {
   max-width: 90vw;
   margin: 0 auto;
 }
-.speCon img{
+.speCon img {
   max-width: 60vw;
   max-height: 60vw;
-  border:  2px solid black ;
+  border: 2px solid black;
 }
-.bigImage{
+.bigImage {
   max-width: 80vw !important;
   max-height: 70vh !important;
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left:-40vw;
+  margin-left: -40vw;
   margin-top: -25vh;
 }
 /*About page*/
@@ -295,7 +335,7 @@ form input,
   border: solid 2px black;
   min-height: 30px;
 }
-.submitBtn {
+.submitBtn,.load {
   min-height: 40px;
   font-size: large;
   font-family: "Whitefish";
@@ -321,87 +361,7 @@ form input,
   align-items: center;
 }
 @media screen and (min-width: 720px) {
-  /*Home page*/
-  .indexImgCon img {
-    min-width: 700px;
-    max-height: 200px;
-    margin-top: 0px;
-  }
-  .indexImgCon {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  /*About page*/
-  .mainContent {
-    max-width: 700px;
-  }
-  /*minimum size page*/
-  .measuring img {
-    max-width: 100%;
-  }
-  .latestCon {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: visible;
-    max-width: 90vw;
-    margin: 0 auto;
-    justify-content: center;
-  }
-  .thumbFeatured,
-  .thumbReco {
-    margin: 40px 40px;
-  }
-  .thumbReco {
-    max-width: 576px !important;
-  }
-  .recoCon img {
-    width: 576px;
-  }
-  /*specific page*/
-.speCon{
-  max-width: 1000px;
-  margin: 0 auto;
-  border: 2px solid black;
-}
-.speCon div{
-  max-width: 700px;
-  margin: 0 auto;
-}
-.speCon img{
-  max-width: 300px;
-  max-height: 300px;
-}
-.bigImage{
- width: 800px !important;
- height: 450px !important;
- position: fixed;
- left: 50%;
- top: 50%;
- margin-left:-400px;
- margin-top: -150px;
-}
-  /*Contact page*/
-  form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 150px) !important;
-    justify-items: center;
-  }
-  .textfield {
-    grid-row: 1/-1;
-    grid-column: 2/3;
-  }
-  .name,
-  .subject,
-  .email {
-    grid-column: 1/2;
-  }
-  .submitBtn {
-    grid-column: 1/-1;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-  main {
+  main,.indexMain {
     margin-top: 300px;
   }
   .logo {
@@ -469,5 +429,91 @@ form input,
     animation-delay: 0.2s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+  }
+  /*Home page*/
+  .indexImgCon img {
+    min-width: 700px;
+    max-height: 200px;
+    margin-top: 0px;
+    border-radius: 10%;
+  }
+  .indexImgCon {
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10%;
+  }
+  /*About page*/
+  .mainContent {
+    max-width: 700px;
+  }
+  /*minimum size page*/
+  .measuring img {
+    max-width: 100%;
+  }
+  .latestCon {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    max-width: 90vw;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .thumbFeatured,
+  .thumbReco {
+    margin: 40px 40px;
+  }
+  .thumbReco {
+    max-width: 576px !important;
+  }
+  .recoCon img {
+    width: 576px;
+  }
+  /*specific page*/
+  .speCon {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+  .speCon div {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .speCon img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .bigImage {
+    width: 800px !important;
+    height: 450px !important;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -150px;
+  }
+  /*blog posts page*/
+.load{
+  width: 432px;
+}
+  /*Contact page*/
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 150px) !important;
+    justify-items: center;
+  }
+  .textfield {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+  }
+  .name,
+  .subject,
+  .email {
+    grid-column: 1/2;
+  }
+  .submitBtn {
+    grid-column: 1/-1;
+    max-width: 200px;
+    margin: 0 auto;
   }
 }

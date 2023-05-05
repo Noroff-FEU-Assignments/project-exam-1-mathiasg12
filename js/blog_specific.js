@@ -1,5 +1,5 @@
 import {urlFunction} from "./function.js";
-const baseUrl= "https://exam1api.gamehubstore.live/wp-json/wp/v2/posts/";
+import { baseUrl } from "./function.js";
 let querrySearch= document.location.search;
 let newParameter= new URLSearchParams(querrySearch);
 let idParameter= newParameter.get("id")

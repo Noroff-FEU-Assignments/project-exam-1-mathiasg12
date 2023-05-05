@@ -35,9 +35,11 @@
     </header>
     <main>
       <h1>blog Posts</h1>
-      <section class="sort">
+      <section class="blogPosts">
+        <div>
         <label for="search" hidden></label>
         <input type="text" id="search" placeholder="Search">
+      </div>
         <div>
           <label for="select">Sort by:</label>
           <select name="select" id="select">
@@ -45,10 +47,13 @@
             <option value="Newest">Newest first</option>
             <option value="featured">Featured first</option>
           </select>
-          <section>
-            <h2>Loading.....</h2>
-          </section>
         </div>
+          <section class="results">
+            <h2>Loading.....</h2>
+            <div class="blogCon">
+            </div>
+            <button class="load">Load more</button>
+          </section>
       </section>
     </main>
     <footer>
@@ -58,6 +63,7 @@
       <li>copyright &copy;</li>
      </ul> 
      <script src="/js/function.js" type="module"></script>
+     <script src="/js/blogPosts.js" type="module"></script>
     </footer>
   </body>
 </html>
