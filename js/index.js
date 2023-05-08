@@ -8,6 +8,7 @@ const recoPosts = document.querySelector(".recoCon");
 const featureH2 = document.querySelector(".featuredH2");
 const recoH2 = document.querySelector(".recoH2");
 const latestH2 = document.querySelector(".latestH2");
+const loader= document.querySelector(".loader")
 import { urlFunction } from "./function.js";
 let page = 1;
 let pageNr = "&page=" + page;
@@ -29,6 +30,7 @@ async function renderCarousel() {
   if (postsArray.length >= 0) {
     latestPosts.innerHTML = " ";
     latestH2.innerHTML = "Latest Posts";
+    loader.innerHTML=""
     console.log(await urlFunction(baseUrl));
     for (let i = 0; i < postsArray.length; i++) {
       let pictureId = postsArray[i];
@@ -57,6 +59,7 @@ async function RenderBasedonCategory(category, con, h2, h2text, thumbClass) {
   let array = await urlFunction(baseUrl);
   con.innerHTML = " ";
   h2.innerHTML = h2text;
+  loader.innerHTML=""
   for (let i = 0; i < array.length; i++) {
     let posts = array[i];
     if (posts.categories[0] === category) {

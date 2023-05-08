@@ -6,10 +6,12 @@ let idParameter= newParameter.get("id")
 let newUrl= baseUrl + idParameter;
 let json= await urlFunction(newUrl)
 const con= document.querySelector(".speCon");
+const loader= document.querySelector(".loader")
 const title= document.querySelector("title");
 function renderBlog(){
 console.log(json)
 title.innerHTML= json.slug
+loader.style.display="none"
 con.innerHTML= `<div><h1>${json.title.rendered}</h1><div>${json.content.rendered}</div></div>`
 }
 renderBlog();

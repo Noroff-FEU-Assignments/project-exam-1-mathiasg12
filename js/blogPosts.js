@@ -8,12 +8,14 @@ const h2 = document.querySelector("h2");
 const loadBtn = document.querySelector(".load");
 const select = document.querySelector("#select");
 const search = document.querySelector("#search");
+const loader= document.querySelector(".loader");
 const sBtn= document.querySelector(".fa-magnifying-glass")
 let arrayWithPosts = await urlFunction(baseUrl + "?per_page=50");
 console.log(arrayWithPosts);
 async function renderPosts(url) {
   let array = await urlFunction(url);
   h2.innerHTML = " ";
+  loader.style.display="none"
   h2.style.display = "none";
   if (array.length >= 0) {
     for (let i = 0; i < array.length; i++) {
@@ -42,6 +44,7 @@ select.addEventListener("change", () => {
   page = 1;
   pageNr = "?page=" + page;
   urlWithPageNr = baseUrl + pageNr;
+  loader.style.display="block"
   loadBtn.disabled = false;
   if (select.value === "newest") {
     renderPosts(urlWithPageNr);
