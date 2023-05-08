@@ -91,7 +91,8 @@ header ul {
   margin: 0 auto;
 }
 .fa-bars,
-.fa-x {
+.fa-x 
+{
   margin-bottom: 8px;
   margin-left: 6px;
   color: white;
@@ -228,14 +229,30 @@ nav {
   font-size: 18px;
   font-weight: bold;
 }
+.search{
+  width: min-content;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.fa-magnifying-glass{
+  height: 20px;
+  background-color: var(--darkblue);
+  padding: 5px;
+  border: white 2px solid;
+  border-left: 0;
+  color: white;
+  margin-right: auto;
+}
 .order{
   margin-top: 20px;
 }
 .search input,.order select{
-  min-height: 25px;
   background-color: var(--darkblue);
   color: white;
   border: 2px solid white;
+}
+.search input{
+  border-right: 0;
 }
 .order select{
   min-height: 30px;
@@ -527,6 +544,9 @@ form input,
 }
 .order label{
   margin-bottom: 5px;
+}
+.fa-magnifying-glass{
+  height: 25px;
 }
 .search,.order{
   margin: 80px 20px 0 20px;
