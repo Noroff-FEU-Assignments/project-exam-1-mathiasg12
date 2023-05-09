@@ -23,6 +23,9 @@ document.addEventListener("scroll", () => {
     navList.classList.remove("smallList")
   }
 });
+function html(posts, arrayPic, thumbClass) {
+  return `<a class="${thumbClass}" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}" alt="${arrayPic.alt_text}"></img><h3>${posts.title.rendered}</h3></a>`;
+}
 export const urlFunction= async function getPost(url) {
   try {
     const resp = await fetch(url);
@@ -33,4 +36,5 @@ export const urlFunction= async function getPost(url) {
   }
 }
 export {baseUrl}
+export {html}
 

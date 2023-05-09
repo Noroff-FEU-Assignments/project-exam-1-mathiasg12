@@ -1,5 +1,6 @@
 import { baseUrl } from "./function.js";
 import { urlFunction } from "./function.js";
+import { html } from "./function.js";
 let page = 1;
 let pageNr = "?page=" + page;
 let urlWithPageNr = baseUrl + pageNr;
@@ -8,14 +9,12 @@ const h2 = document.querySelector("h2");
 const loadBtn = document.querySelector(".load");
 const select = document.querySelector("#select");
 const search = document.querySelector("#search");
-const loader= document.querySelector(".loader");
-const sBtn= document.querySelector(".fa-magnifying-glass")
+const loader = document.querySelector(".loader");
+const sBtn = document.querySelector(".fa-magnifying-glass");
 let arrayWithPosts = await urlFunction(baseUrl + "?per_page=50");
-console.log(arrayWithPosts);
 async function renderPosts(url) {
   let array = await urlFunction(url);
-  h2.innerHTML = " ";
-  loader.style.display="none"
+  loader.style.display = "none";
   h2.style.display = "none";
   if (array.length >= 0) {
     for (let i = 0; i < array.length; i++) {
@@ -27,7 +26,7 @@ async function renderPosts(url) {
       );
       try {
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += `<a class="thumbFeatured" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}"></img><h3>${posts.title.rendered}</h3></a>`;
+        con.innerHTML += html(posts, arrayPic, "thumbFeatured");
       } catch (error) {
         console.log(error);
       }
@@ -40,11 +39,11 @@ async function renderPosts(url) {
 renderPosts(urlWithPageNr);
 select.addEventListener("change", () => {
   con.innerHTML = "";
-  search.value= " "
+  search.value = " ";
   page = 1;
   pageNr = "?page=" + page;
   urlWithPageNr = baseUrl + pageNr;
-  loader.style.display="block"
+  loader.style.display = "block";
   loadBtn.disabled = false;
   if (select.value === "newest") {
     renderPosts(urlWithPageNr);
@@ -53,16 +52,13 @@ select.addEventListener("change", () => {
   }
 });
 loadBtn.addEventListener("click", () => {
-  search.value= " "
+  search.value = " ";
+  page++;
+  pageNr = "?page=" + page;
+  urlWithPageNr = baseUrl + pageNr;
   if (select.value === "newest") {
-    page++;
-    pageNr = "?page=" + page;
-    urlWithPageNr = baseUrl + pageNr;
     renderPosts(urlWithPageNr);
   } else if (select.value === "oldest") {
-    page++;
-    pageNr = "?page=" + page;
-    urlWithPageNr = baseUrl + pageNr;
     renderPosts(urlWithPageNr + "&order=asc");
   }
 });
@@ -80,7 +76,7 @@ async function searchArray(searchResult) {
       );
       try {
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += `<a class="thumbFeatured" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}"></img><h3>${posts.title.rendered}</h3></a>`;
+        con.innerHTML += html(posts, arrayPic, "thumbFeatured");
       } catch (error) {
         console.log(error);
       }
@@ -90,11 +86,11 @@ async function searchArray(searchResult) {
     loadBtn.disabled = true;
   }
 }
-search.addEventListener("keypress",(press)=>{
-  if(press.key === "Enter"){
+search.addEventListener("keypress", (press) => {
+  if (press.key === "Enter") {
     sBtn.click();
   }
-})
+});
 sBtn.addEventListener("click", () => {
   let searchValue = search.value.toLowerCase().trim();
   let searchResult = arrayWithPosts.filter((search) => {
@@ -108,10 +104,10 @@ sBtn.addEventListener("click", () => {
       con.innerHTML = "";
       searchArray(searchResult);
     } else {
-      location.reload()
+      location.reload();
     }
-  }
-  else if(searchResult.length === 0){
-    con.innerHTML = "<h2>Sorry no matches</h2>"
+  } else if (searchResult.length === 0) {
+    con.innerHTML = "<h2>Sorry no matches</h2>";
+    loadBtn.disabled = true;
   }
 });

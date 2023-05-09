@@ -36,40 +36,40 @@
     <main>
       <h1>blog Posts</h1>
       <section class="blogPosts">
-          <section class="results">
-            <h2></h2>
-            <div class="sortingElements">
+        <section class="results">
+          <div class="sortingElements">
             <div class="search">
-              <label for="search" hidden></label>
-              <input type="text" id="search" placeholder="Search" >
+              <label for="search" hidden>Search</label>
+              <input type="text" id="search" placeholder="Search" />
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-              <div class="order">
-                <label for="select" hidden>Sort by:</label>
-                <select name="select" id="select">
-                  <option value="newest" selected id="newest">Newest first</option>
-                  <option value="oldest"id="oldest">oldest first</option>
-                </select>
-              </div>
+            <div class="order">
+              <label for="select" hidden>Sort by:</label>
+              <select name="select" id="select">
+                <option value="newest" selected id="newest">
+                  Newest first
+                </option>
+                <option value="oldest" id="oldest">oldest first</option>
+              </select>
             </div>
-            <div class="loader">
-              <h2 class="loaderH2">Loading</h2>
+          </div>
+          <div class="loader">
+            <h2 class="loaderH2">Loading</h2>
             <div class="loading"></div>
           </div>
-            <div class="blogCon">
-            </div>
-            <button class="load">Load more</button>
-          </section>
+          <div class="blogCon"></div>
+          <button class="load">Load more</button>
+        </section>
       </section>
     </main>
     <footer>
-     <ul class="footerList">
-      <li>Phone: 99999999</li>
-      <li>Email: fishNorway@gmail.com</li>
-      <li>copyright &copy;</li>
-     </ul> 
-     <script src="/js/function.js" type="module"></script>
-     <script src="/js/blogPosts.js" type="module"></script>
+      <ul class="footerList">
+        <li>Phone: 99999999</li>
+        <li>Email: fishNorway@gmail.com</li>
+        <li>copyright &copy;</li>
+      </ul>
+      <script src="/js/function.js" type="module"></script>
+      <script src="/js/blogPosts.js" type="module"></script>
     </footer>
   </body>
 </html>

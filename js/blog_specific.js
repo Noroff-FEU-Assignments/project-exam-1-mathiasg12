@@ -8,11 +8,13 @@ let json= await urlFunction(newUrl)
 const con= document.querySelector(".speCon");
 const loader= document.querySelector(".loader")
 const title= document.querySelector("title");
+function htmlContent(json){
+  return `<div><h1>${json.title.rendered}</h1><div>${json.content.rendered}</div></div>`
+}
 function renderBlog(){
-console.log(json)
 title.innerHTML= json.slug
 loader.style.display="none"
-con.innerHTML= `<div><h1>${json.title.rendered}</h1><div>${json.content.rendered}</div></div>`
+con.innerHTML= htmlContent(json);
 }
 renderBlog();
 document.addEventListener("click",(myClick)=>{

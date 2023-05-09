@@ -1,5 +1,8 @@
-const url = "https://exam1api.gamehubstore.live/wp-json/wp/v2/posts?per_page=4";
-const baseUrl ="https://exam1api.gamehubstore.live/wp-json/wp/v2/posts?per_page=50";
+import { baseUrl } from "./function.js";
+import { html } from "./function.js";
+import { urlFunction } from "./function.js";
+const url = baseUrl + "?per_page=4"
+const expandedUrl =baseUrl + "?per_page=50"
 const nextArrow = document.querySelector("#arrowRight");
 const backArrow = document.querySelector("#arrowLeft");
 const latestPosts = document.querySelector(".latestCon");
@@ -8,8 +11,7 @@ const recoPosts = document.querySelector(".recoCon");
 const featureH2 = document.querySelector(".featuredH2");
 const recoH2 = document.querySelector(".recoH2");
 const latestH2 = document.querySelector(".latestH2");
-const loader= document.querySelector(".loader")
-import { urlFunction } from "./function.js";
+const loader = document.querySelector(".loader");
 let page = 1;
 let pageNr = "&page=" + page;
 let urlWithPageNr = url + pageNr;
@@ -30,8 +32,7 @@ async function renderCarousel() {
   if (postsArray.length >= 0) {
     latestPosts.innerHTML = " ";
     latestH2.innerHTML = "Latest Posts";
-    loader.innerHTML=""
-    console.log(await urlFunction(baseUrl));
+    loader.innerHTML = "";
     for (let i = 0; i < postsArray.length; i++) {
       let pictureId = postsArray[i];
       let param = new URLSearchParams(pictureId);
@@ -42,8 +43,7 @@ async function renderCarousel() {
       try {
         let arrayPic = await featuredPicture.json();
         let posts = postsArray[i];
-        latestPosts.innerHTML += `<a class="thumbnailLatest" href="blog_specific.html?id=${posts.id}">
-        <img src="${arrayPic.source_url}" class="thumbNailImg"></img><h3>${posts.title.rendered}</h3></a>`;
+        latestPosts.innerHTML += html(posts, arrayPic, "thumbnailLatest");
       } catch (error) {
         console.log(error);
       }
@@ -56,10 +56,10 @@ async function renderCarousel() {
   }
 }
 async function RenderBasedonCategory(category, con, h2, h2text, thumbClass) {
-  let array = await urlFunction(baseUrl);
+  let array = await urlFunction(expandedUrl);
   con.innerHTML = " ";
   h2.innerHTML = h2text;
-  loader.innerHTML=""
+  loader.innerHTML = "";
   for (let i = 0; i < array.length; i++) {
     let posts = array[i];
     if (posts.categories[0] === category) {
@@ -70,7 +70,7 @@ async function RenderBasedonCategory(category, con, h2, h2text, thumbClass) {
       );
       try {
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += `<a class="${thumbClass}" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}"></img><h3>${posts.title.rendered}</h3></a>`;
+        con.innerHTML += html(posts, arrayPic, thumbClass)
       } catch (error) {
         console.log(error);
       }
