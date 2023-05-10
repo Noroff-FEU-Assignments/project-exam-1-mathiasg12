@@ -1,6 +1,7 @@
 import { baseUrl } from "./function.js";
 import { urlFunction } from "./function.js";
 import { html } from "./function.js";
+import { formatDate } from "./function.js";
 let page = 1;
 let pageNr = "?page=" + page;
 let urlWithPageNr = baseUrl + pageNr;
@@ -21,12 +22,12 @@ async function renderPosts(url) {
       let posts = array[i];
       let param = new URLSearchParams(posts);
       let id = param.get("featured_media");
-      let featuredPicture = await fetch(
-        "https://exam1api.gamehubstore.live/wp-json/wp/v2/media/" + id
-      );
       try {
+        let featuredPicture = await fetch(
+          "https://exam1api.gamehubstore.live/wp-json/wp/v2/media/" + id
+        );
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += html(posts, arrayPic, "thumbFeatured");
+        con.innerHTML += html(posts, arrayPic, "thumbFeatured", formatDate(posts.date));
       } catch (error) {
         console.log(error);
       }
@@ -76,7 +77,7 @@ async function searchArray(searchResult) {
       );
       try {
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += html(posts, arrayPic, "thumbFeatured");
+        con.innerHTML += html(posts, arrayPic, "thumbFeatured",formatDate(posts.date));
       } catch (error) {
         console.log(error);
       }

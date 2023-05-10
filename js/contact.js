@@ -48,7 +48,7 @@ sendBtn.addEventListener("click", (reload) => {
   if (
     checkLength(5, nameInput) &&
     checkLength(25, message) &&
-    emailValidation &&
+    (emailValidation() === true) &&
     checkLength(15, subject)
   ) {
     window.location = "thx.html";

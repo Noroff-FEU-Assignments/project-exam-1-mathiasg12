@@ -3,8 +3,8 @@ const nav = document.querySelector("nav");
 const header = document.querySelector("header");
 const logo = document.querySelector(".logo");
 const logoCon = document.querySelector(".logoCon");
-const navList= document.querySelector("nav ul li")
-const baseUrl= "https://exam1api.gamehubstore.live/wp-json/wp/v2/posts/";
+const navList = document.querySelector("nav ul li");
+const baseUrl = "https://exam1api.gamehubstore.live/wp-json/wp/v2/posts/";
 bars.addEventListener("click", () => {
   nav.classList.toggle("navOn");
   bars.classList.toggle("fa-x");
@@ -15,18 +15,19 @@ document.addEventListener("scroll", () => {
     header.classList.add("smallHeader");
     logo.classList.add("smallLogo");
     logoCon.classList.add("smallLogoCon");
-    navList.classList.add("smallList")
+    navList.classList.add("smallList");
   } else {
     header.classList.remove("smallHeader");
     logo.classList.remove("smallLogo");
     logoCon.classList.remove("smallLogoCon");
-    navList.classList.remove("smallList")
+    navList.classList.remove("smallList");
   }
 });
-function html(posts, arrayPic, thumbClass) {
-  return `<a class="${thumbClass}" href="blog_specific.html?id=${posts.id}"><img src="${arrayPic.source_url}" alt="${arrayPic.alt_text}"></img><h3>${posts.title.rendered}</h3></a>`;
+function html(posts, arrayPic, thumbClass, postDate) {
+  return `<a class="${thumbClass}" href="blog_specific.html?id=${posts.id}">
+  <img src="${arrayPic.source_url}" alt="${arrayPic.alt_text}"></img><div class="date"><p>${postDate}</p></div><h3>${posts.title.rendered}</h3></a>`;
 }
-export const urlFunction= async function getPost(url) {
+const urlFunction = async function getPost(url) {
   try {
     const resp = await fetch(url);
     const apiJson = await resp.json();
@@ -34,7 +35,17 @@ export const urlFunction= async function getPost(url) {
   } catch (error) {
     console.log(error);
   }
+};
+function formatDate(date) {
+  let newDate = new Date(date).toLocaleDateString("nb-NO", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+    hour12: "false",
+  });
+  return newDate;
 }
-export {baseUrl}
-export {html}
-
+export { formatDate };
+export { baseUrl };
+export { html };
+export {urlFunction}
