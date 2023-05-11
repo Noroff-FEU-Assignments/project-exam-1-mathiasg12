@@ -7,6 +7,10 @@ const subjectLabel = document.querySelector("#subjectL");
 const message = document.querySelector("#text");
 const messageLabel = document.querySelector("#textL");
 const sendBtn = document.querySelector(".submitBtn");
+const main= document.querySelector("main");
+const thankYouMessage= `<section class="mainContent thank_you"><h1>Thank you!!</h1>
+<p> thank you for your message. I will answer as soon as possible by email</p>
+<a href="index.html"id="continue">Continue</a></section> `
 function emailValidation() {
   const format = /\S+@\S+\.\S+/;
   const emailVal = email.value;
@@ -51,7 +55,8 @@ sendBtn.addEventListener("click", (reload) => {
     (emailValidation() === true) &&
     checkLength(15, subject)
   ) {
-    window.location = "thx.html";
+    main.innerHTML= thankYouMessage;
+    window.scrollTo(0, 0);
   } else {
     lengthValidation(
       5,

@@ -329,6 +329,11 @@ nav {
   background-repeat: repeat;
   background-blend-mode: multiply;
 }
+.aboutLinks{
+  color: var(--darkblue);
+  font-size: 20px;
+  text-decoration: underline;
+}
 .mainContent {
   max-width: 80vw;
   margin: 0 auto;
