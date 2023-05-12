@@ -132,14 +132,14 @@ nav {
   margin-left: 6px;
   max-width: 80vw;
 }
-figure{
+figure {
   cursor: pointer;
 }
 /*Home page*/
 .indexMain {
   margin-top: 130px;
 }
-.date p{
+.date p {
   margin: 0;
 }
 .date {
@@ -291,40 +291,6 @@ figure{
 .search input::placeholder {
   color: white;
 }
-/*specific page*/
-.speCon {
-  background-color: white;
-  padding: 20px;
-  max-width: 100vw;
-  overflow-x: hidden;
-  padding-bottom: 40px;
-  margin: 0 auto;
-  border: 2px solid black;
-}
-.speCon div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.speCon p {
-  max-width: 90vw;
-  margin: 5px auto;
-}
-.speCon img {
-  max-width: 60vw;
-  max-height: 60vw;
-  border: 5px solid black;
-}
-.bigImage {
-  max-width: 80vw !important;
-  max-height: 70vh !important;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  margin-left: -40vw;
-  margin-top: -25vh;
-  z-index: 2;
-}
 /*About page*/
 .bodyWithBackgroundImage {
   background-image: url(/pictures/resized\ background\ 2.jpg);
@@ -332,7 +298,7 @@ figure{
   background-repeat: repeat;
   background-blend-mode: multiply;
 }
-.aboutLinks{
+.aboutLinks {
   color: var(--darkblue);
   font-size: 20px;
   text-decoration: underline;
@@ -368,26 +334,30 @@ td {
   margin: 30px auto 100px auto;
 }
 /*Contact page*/
-.cForm,.cForm h2{
+.cForm,
+.cForm h2 {
   margin-top: 50px;
 }
-form {
+form,
+.leaveComment {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
 }
-form div {
+form div,
+.leaveComment div {
   width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
 }
-form label {
+form label,
+.comments label {
   margin-bottom: 5px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: "Whitefish";
 }
 ::placeholder {
@@ -420,7 +390,7 @@ form input,
   font-family: "Whitefish";
 }
 .submitBtn:hover,
-.submitBtn:focus {
+.submitBtn:focus{
   background-color: white;
   color: black;
   font-size: 1.5em;
@@ -439,8 +409,93 @@ form input,
   flex-direction: column;
   align-items: center;
 }
+/*specific page*/
+.speCon {
+  background-color: white;
+  padding: 20px;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+.speCon div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.speCon p {
+  max-width: 90vw;
+  margin: 5px auto;
+}
+.speCon img {
+  max-width: 60vw;
+  max-height: 60vw;
+  border: 5px solid black;
+}
+.bigImage {
+  max-width: 80vw !important;
+  max-height: 70vh !important;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -40vw;
+  margin-top: -25vh;
+  z-index: 2;
+}
+.comments {
+  background-color: var(--darkblue);
+  padding: 50px 10px;
+  color: white;
+}
+.comments input,
+#com,
+.publishCom {
+  background-color: white;
+  border: 3px solid black;
+  min-width: 200px;
+}
+.comments input {
+  min-height: 36px;
+}
+.leaveComment,
+.commentsCon {
+  margin: 50px auto;
+}
+.comments input:focus,
+#com:focus {
+  zoom: 130%;
+  background-color: white;
+  color: black;
+}
+.publishCom {
+  height: 40px;
+}
+.publishCom:hover,
+.publishCom:focus{
+  background-color:var(--lightblue);
+  color: white;
+  zoom: 110%;
+  font-size: 24px;
+}
+.commentCard{
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 70vw;
+  height: fit-content;
+}
+.commentCard p{
+  margin: 20px auto;
+}
+.commentCard h3{
+  width: fit-content;
+  margin: 0 auto;
+}
 @media screen and (min-width: 720px) {
-  main{
+  main {
     margin-top: 350px;
   }
   .indexMain {
@@ -525,7 +580,7 @@ form input,
     display: flex;
     flex-direction: column;
   }
-  .indexImgCon div{
+  .indexImgCon div {
     margin: 0 auto;
   }
   /*About page*/
@@ -555,9 +610,10 @@ form input,
     width: 576px;
   }
   /*specific page*/
-  .speCon {
+  .speCon,
+  .comments {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 20px auto;
     border: 2px solid black;
   }
   .speCon div {
@@ -603,14 +659,23 @@ form input,
     font-size: 24px;
     font-weight: bold;
   }
-  /*Contact page*/
-  form {
+  /*Forms: Contact page and specific page*/
+  #com,
+  #text {
+    height: 334px;
+  }
+  .leaveComment {
+    max-width: 500px;
+  }
+  form,
+  .leaveComment {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 150px) !important;
     justify-items: center;
   }
-  .textfield {
+  .textfield,
+  .commentsText {
     grid-row: 1/-1;
     grid-column: 2/3;
   }
@@ -619,7 +684,8 @@ form input,
   .email {
     grid-column: 1/2;
   }
-  .submitBtn {
+  .submitBtn,
+  .publishCom {
     grid-column: 1/-1;
     max-width: 200px;
     margin: 0 auto;

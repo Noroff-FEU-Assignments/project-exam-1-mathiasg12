@@ -21,7 +21,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" />
-    <meta name="keywords" content="blog, posts, fishing, fish, Norway, stories, tips, water,guides " />
+    <meta
+      name="keywords"
+      content="blog, posts, fishing, fish, Norway, stories, tips, water,guides "
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -55,6 +58,32 @@
         <div class="loading"></div>
       </div>
       <section class="speCon"></section>
+      <section class="comments">
+        <h2>Comments</h2>
+        <div class="commentsCon"></div>
+          <h3 class="commentH3">Leave a comment</h3>
+          <form class="leaveComment">
+          <div class="name">
+            <label for="name" id="nameL">Name</label>
+            <input type="text" id="name" />
+          </div>
+          <div class="email">
+            <label for="email" id="emailL">Email</label>
+            <input type="text" id="email" />
+          </div>
+          <div class="commentsText">
+            <label for="com" id="textL">Comment</label
+            ><textarea
+              name="textfield"
+              id="com"
+              cols="25"
+              rows="20"
+              placeholder="Comment here"
+            ></textarea>
+          </div>
+          <input type="submit" class="publishCom" value="Post"></input>
+        </form>
+      </section>
     </main>
     <footer>
       <ul class="footerList">
