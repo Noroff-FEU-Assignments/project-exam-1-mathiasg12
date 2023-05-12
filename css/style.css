@@ -367,6 +367,7 @@ form label,
   color: red;
   text-align: center;
   font-size: 1em;
+  max-width: 180px;
 }
 .errorInput {
   border: 4px solid red !important;

@@ -8,45 +8,13 @@ const message = document.querySelector("#text");
 const messageLabel = document.querySelector("#textL");
 const sendBtn = document.querySelector(".submitBtn");
 const main= document.querySelector("main");
+import { checkLength } from "./function.js";
+import { emailValidation } from "./function.js";
+import { checkEmail } from "./function.js";
+import { lengthValidation} from "./function.js";
 const thankYouMessage= `<section class="mainContent thank_you"><h1>Thank you!!</h1>
 <p> Thank you for your message. I will answer as soon as possible by email</p>
 <a href="index.html"id="continue">Continue</a></section> `
-function emailValidation() {
-  const format = /\S+@\S+\.\S+/;
-  const emailVal = email.value;
-  return format.test(emailVal);
-}
-function checkEmail() {
-  if (emailValidation() === true) {
-    emailLabel.innerHTML = "Email";
-    emailLabel.classList.remove("errorLabel");
-    email.classList.remove("errorInput");
-  } else {
-    emailLabel.innerHTML = `<p>Please enter a valid email</p>`;
-    emailLabel.classList.add("errorLabel");
-    email.classList.add("errorInput");
-  }
-}
-function checkLength(min, input) {
-  if (input.value.trim().length > min) {
-    return true;
-  } else {
-    return false;
-  }
-}
-function lengthValidation(min, checkLength, input, label, orgName) {
-  if (checkLength === true) {
-    label.innerHTML = orgName;
-    label.classList.remove("errorLabel");
-    input.classList.remove("errorInput");
-  } else {
-    label.innerHTML = `<p>Sorry ${orgName} must contain at least ${
-      min + 1
-    } characters</p>`;
-    label.classList.add("errorLabel");
-    input.classList.add("errorInput");
-  }
-}
 sendBtn.addEventListener("click", (reload) => {
   reload.preventDefault();
   if (
@@ -79,11 +47,11 @@ sendBtn.addEventListener("click", (reload) => {
       messageLabel,
       "Message"
     );
-    checkEmail();
+    checkEmail(emailLabel,email);
   }
 });
 email.addEventListener("change", () => {
-  checkEmail();
+  checkEmail(emailLabel,email);
 });
 nameInput.addEventListener("change", () => {
   lengthValidation(5, checkLength(5, nameInput), nameInput, nameLabel, "Name");

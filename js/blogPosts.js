@@ -1,7 +1,7 @@
 import { baseUrl } from "./function.js";
 import { urlFunction } from "./function.js";
 import { html } from "./function.js";
-import { formatDate } from "./function.js";
+import { formatDateComments } from "./function.js";
 let page = 1;
 let pageNr = "?page=" + page;
 let urlWithPageNr = baseUrl + pageNr;
@@ -27,7 +27,7 @@ async function renderPosts(url) {
           "https://exam1api.gamehubstore.live/wp-json/wp/v2/media/" + id
         );
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += html(posts, arrayPic, "thumbFeatured", formatDate(posts.date));
+        con.innerHTML += html(posts, arrayPic, "thumbFeatured", formatDateComments(posts.date));
       } catch (error) {
         console.log(error);
       }

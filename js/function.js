@@ -45,7 +45,59 @@ function formatDate(date) {
   });
   return newDate;
 }
+function formatDateComments(n) {
+  let newDate = new Date(n).toLocaleDateString("nb-NO", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour24: "true",
+  });
+  return newDate;
+}
+function checkLength(min, input) {
+  if (input.value.trim().length > min) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function emailValidation() {
+  const format = /\S+@\S+\.\S+/;
+  const emailVal = email.value;
+  return format.test(emailVal);
+}
+function checkEmail(emailLabel, email) {
+  if (emailValidation() === true) {
+    emailLabel.innerHTML = "Email";
+    emailLabel.classList.remove("errorLabel");
+    email.classList.remove("errorInput");
+  } else {
+    emailLabel.innerHTML = `<p>Please enter a valid email</p>`;
+    emailLabel.classList.add("errorLabel");
+    email.classList.add("errorInput");
+  }
+}
+function lengthValidation(min, checkLength, input, label, orgName) {
+  if (checkLength === true) {
+    label.innerHTML = orgName;
+    label.classList.remove("errorLabel");
+    input.classList.remove("errorInput");
+  } else {
+    label.innerHTML = `<p>Sorry ${orgName} must contain at least ${
+      min + 1
+    } characters</p>`;
+    label.classList.add("errorLabel");
+    input.classList.add("errorInput");
+  }
+}
 export { formatDate };
 export { baseUrl };
 export { html };
-export {urlFunction}
+export { urlFunction };
+export { checkLength };
+export { emailValidation };
+export { checkEmail };
+export { lengthValidation };
+export { formatDateComments };
