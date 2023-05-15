@@ -6,6 +6,7 @@ body {
   margin: 0;
   background-color: var(--lightblue);
   max-width: 100vw !important;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: "Whitefish";
@@ -485,15 +486,15 @@ form input,
   border: 2px solid black;
   margin: 20px auto;
   padding: 20px;
-  max-width: 70vw;
+  min-width: 70vw;
   height: fit-content;
 }
-.commentCard p{
-  margin: 20px auto;
-}
-.commentCard h3{
-  width: fit-content;
+.commentCard h3, .commentCard h4{
   margin: 0 auto;
+  padding: 5px;
+}
+.commentCard p{
+  margin: 5px auto;
 }
 @media screen and (min-width: 720px) {
   main {
