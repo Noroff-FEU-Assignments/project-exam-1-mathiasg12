@@ -153,7 +153,6 @@ figure {
   width: 100vw;
   padding-bottom: 20px;
 }
-
 .indexImgCon img {
   min-width: 100vw;
   max-height: 50vw;
@@ -320,7 +319,6 @@ figure {
   max-width: 80vw;
   margin: 0 auto;
   background-color: white;
-  border-radius: 10%;
   padding: 30px;
   margin: 100px auto 0 auto;
 }
@@ -347,10 +345,6 @@ td {
   margin: 30px auto 100px auto;
 }
 /*Contact page*/
-.cForm,
-.cForm h2 {
-  margin-top: 50px;
-}
 form,
 .leaveComment {
   display: flex;
@@ -366,6 +360,13 @@ form div,
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
+}
+.cForm{
+  background-color:var(--darkblue);
+  margin-top: 0;
+}
+.cForm h2{
+  color: white;
 }
 form label,
 .comments label {
@@ -387,15 +388,14 @@ form label,
 }
 form input:focus,
 #text:focus {
-  background-color: var(--darkblue);
-  color: white;
+  background-color: white;
 }
 form input,
 #text {
   min-width: 200px;
   background-color: var(--lightblue);
-  border: solid 2px black;
   min-height: 30px;
+  border: 2px solid black;
 }
 .submitBtn,
 .load {
@@ -438,9 +438,6 @@ form input,
   flex-direction: column;
   align-items: center;
 }
-.wp-block-heading{
-  margin: 30px auto;
-}
 .speCon p {
   max-width: 90vw;
   margin: 5px auto;
@@ -448,7 +445,8 @@ form input,
 .speCon img {
   max-width: 60vw;
   max-height: 60vw;
-  border: 5px solid black;
+  box-shadow: 4px 4px 4px 4px black;
+  margin:35px auto;
 }
 .bigImage {
   max-width: 80vw !important;
@@ -681,33 +679,22 @@ form input,
   /*Forms: Contact page and specific page*/
   #com,
   #text {
-    height: 334px;
+    height: 250px;
   }
   .leaveComment {
     max-width: 500px;
   }
   form,
   .leaveComment {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 150px) !important;
-    justify-items: center;
+    display: flex;
+    margin-bottom: 50px;
   }
-  .textfield,
-  .commentsText {
-    grid-row: 1/-1;
-    grid-column: 2/3;
-  }
-  .name,
-  .subject,
-  .email {
-    grid-column: 1/2;
+  form input,#text {
+   min-width: 400px;
   }
   .submitBtn,
   .publishCom {
-    grid-column: 1/-1;
-    max-width: 200px;
-    margin: 0 auto;
+    min-width: 400px;
   }
 }
 @media screen and (min-width: 1000px) {

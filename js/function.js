@@ -71,10 +71,12 @@ function emailValidation() {
 function checkEmail(emailLabel, email) {
   if (emailValidation() === true) {
     emailLabel.innerHTML = "Email";
+    emailLabel.style.display="hidden"
     emailLabel.classList.remove("errorLabel");
     email.classList.remove("errorInput");
   } else {
     emailLabel.innerHTML = `<p>Please enter a valid email</p>`;
+    emailLabel.style.display="inline"
     emailLabel.classList.add("errorLabel");
     email.classList.add("errorInput");
   }
@@ -82,12 +84,14 @@ function checkEmail(emailLabel, email) {
 function lengthValidation(min, checkLength, input, label, orgName) {
   if (checkLength === true) {
     label.innerHTML = orgName;
+    label.style.display="hidden"
     label.classList.remove("errorLabel");
     input.classList.remove("errorInput");
   } else {
     label.innerHTML = `<p>Sorry ${orgName} must contain at least ${
       min + 1
     } characters</p>`;
+    label.style.display="inline"
     label.classList.add("errorLabel");
     input.classList.add("errorInput");
   }

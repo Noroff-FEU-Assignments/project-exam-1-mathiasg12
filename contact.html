@@ -62,25 +62,25 @@
         <h2>Contact form</h2>
         <form>
           <div class="name">
-            <label for="name" id="nameL">Name</label>
-            <input type="text" id="name" />
+            <label for="name" id="nameL" hidden>Name</label>
+            <input type="text" id="name" placeholder="Full name" />
           </div>
           <div class="email">
-            <label for="email" id="emailL">Email</label>
-            <input type="text" id="email" />
+            <label for="email" id="emailL" hidden>Email</label>
+            <input type="text" id="email"placeholder="Email" />
           </div>
           <div class="subject">
-            <label for="subject" id="subjectL">Subject</label>
-            <input type="text" id="subject" />
+            <label for="subject" id="subjectL" hidden>Subject</label>
+            <input type="text" id="subject" placeholder="Subject" />
           </div>
           <div class="textfield">
-            <label for="text" id="textL">Message</label>
+            <label for="text" id="textL" hidden>Message</label>
             <textarea
               name="textfield"
               id="text"
               cols="25"
               rows="20"
-              placeholder="write your message here"
+              placeholder="Message: write your message here"
             ></textarea>
           </div>
           <input type="submit" value="Send" class="submitBtn" />
