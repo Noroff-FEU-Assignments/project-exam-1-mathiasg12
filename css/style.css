@@ -486,7 +486,7 @@ form input,
   border: 2px solid black;
   margin: 20px auto;
   padding: 20px;
-  min-width: 70vw;
+  max-width: 70vw;
   height: fit-content;
 }
 .commentCard h3, .commentCard h4{
