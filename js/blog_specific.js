@@ -36,11 +36,11 @@ console.log(comments);
 metaCon.innerHTML = text;
 console.log(json);
 function htmlContent(json) {
-  return `<div><h1>${json.title.rendered}</h1><div class="date"><p>${formatDate(
+  return `<div><div class="date"><h1>${json.title.rendered}</h1><p>${formatDate(
     json.date
-  )}</p><p> Author: ${author.name}</p></div><div>${
+  )}</p></div><p> Author: ${author.name}</p></div><div>${
     json.content.rendered
-  }</div></div>`;
+  }</div>`;
 }
 function htmlComments(json) {
   return `<div class="commentCard"><h3>${
