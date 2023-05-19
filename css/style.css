@@ -412,18 +412,19 @@ form input,
   font-size: 1.5em;
 }
 /*thank you page*/
-#continue {
-  color: white;
-  background-color: black;
-  padding: 8px;
-  border-radius: 10%;
-  text-decoration: none;
-  width: fit-content;
-}
 .thank_you {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 50px auto 100px auto;
+  opacity: 80%;
+  background-color: rgb(154, 255, 151);
+  color: #454545;
+  box-shadow: 2px 2px 1px 1px green;
+}
+.thank_you h2{
+  color: #454545;
+  margin: 20px auto;
 }
 /*specific page*/
 .speCon {
@@ -515,12 +516,10 @@ form input,
   min-height: 80px;
   background-color: white !important;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 60vw;
 }
 .commentContent p{
   margin: 0;
+  width: 240px !important;
 }
 
 @media screen and (min-width: 720px) {
@@ -657,6 +656,11 @@ form input,
   }
   .commentCard{
     max-width: 505px;
+    box-shadow: 1px 1px 2px 2px black;
+  }
+  .commentContent p{
+    margin: 0;
+    width: 480px !important;
   }
   /*blog posts page*/
   .load {

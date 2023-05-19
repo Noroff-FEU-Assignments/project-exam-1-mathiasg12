@@ -71,7 +71,7 @@ function emailValidation() {
 function checkEmail(emailLabel, email) {
   if (emailValidation() === true) {
     emailLabel.innerHTML = "Email";
-    emailLabel.style.display="hidden"
+    emailLabel.style.display="none"
     emailLabel.classList.remove("errorLabel");
     email.classList.remove("errorInput");
   } else {
@@ -84,7 +84,7 @@ function checkEmail(emailLabel, email) {
 function lengthValidation(min, checkLength, input, label, orgName) {
   if (checkLength === true) {
     label.innerHTML = orgName;
-    label.style.display="hidden"
+    label.style.display="none"
     label.classList.remove("errorLabel");
     input.classList.remove("errorInput");
   } else {
