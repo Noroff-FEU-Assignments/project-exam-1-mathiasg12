@@ -43,11 +43,11 @@ function htmlContent(json) {
   }</div>`;
 }
 function htmlComments(json) {
-  return `<div class="commentCard"><h3>${
+  return `<div class="commentCard"><div class="date"><h3>${
     json.author_name
-  }</h3><div class="date"><h4>${formatDateComments(json.date)}</h4><p>${
+  }</h3><h4>${formatDateComments(json.date)}</h4></div><p>${
     json.content.rendered
-  }</p></div>`;
+  }</p>`;
 }
 async function renderComments() {
   if (comments.length >= 1) {
