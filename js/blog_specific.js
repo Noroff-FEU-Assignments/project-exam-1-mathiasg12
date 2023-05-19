@@ -45,9 +45,9 @@ function htmlContent(json) {
 function htmlComments(json) {
   return `<div class="commentCard"><div class="date"><h3>${
     json.author_name
-  }</h3><h4>${formatDateComments(json.date)}</h4></div><p>${
+  }</h3><h4>${formatDateComments(json.date)}</h4></div><div class="commentContent"><p>${
     json.content.rendered
-  }</p>`;
+  }</p></div>`;
 }
 async function renderComments() {
   if (comments.length >= 1) {
