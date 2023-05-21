@@ -25,7 +25,7 @@ document.addEventListener("scroll", () => {
 });
 function html(posts, arrayPic, thumbClass, postDate) {
   return `<a class="${thumbClass}" href="blog_specific.html?id=${posts.id}">
-  <img src="${arrayPic.source_url}" alt="${arrayPic.alt_text}"></img><div class="date"><p>${postDate}</p></div><h3>${posts.title.rendered}</h3></a>`;
+  <div class="imgCon"><img src="${arrayPic.source_url}" alt="${arrayPic.alt_text}"></img></div><div class="date"><p>${postDate}</p></div><h3>${posts.title.rendered}</h3></a>`;
 }
 const urlFunction = async function getPost(url) {
   try {
