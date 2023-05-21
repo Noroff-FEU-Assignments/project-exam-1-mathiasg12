@@ -7,7 +7,7 @@ body {
   margin: 0;
   background-color: var(--lightblue);
   width: 100vw !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 @font-face {
   font-family: "Whitefish";
@@ -141,13 +141,10 @@ figure {
 .indexMain {
   margin-top: 130px;
 }
-.date p {
-  margin: 0;
-}
 .date {
-  text-align: center;
   margin: 5px auto 0 auto;
   height: fit-content !important;
+  width: fit-content !important;
 }
 .indexImgCon {
   background-image: url(/pictures/resized\ background\ 1.jpg);
@@ -292,6 +289,7 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 .load {
   color: white;
@@ -398,6 +396,7 @@ form div,
 .cForm {
   background-color: var(--darkblue);
   margin-top: 0;
+  margin-bottom: 100px;
 }
 .cForm h2 {
   color: white;
@@ -497,6 +496,7 @@ form input,
   background-color: var(--darkblue);
   padding: 50px;
   color: white;
+  margin-bottom: 100px;
 }
 .comments input,
 #com,
@@ -750,8 +750,7 @@ form input,
     grid-template-columns: auto auto auto auto;
     max-width: 1500px;
   }
-  .featuredCon,
-  .recoCon{
+  .featuredCon{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 1200px;
 }
@@ -766,4 +765,15 @@ form input,
     margin-top: -180px !important;
     cursor: default;
   }
+}
+@media screen and (max-width: 270px){
+  .thumbFeatured{
+    max-width: 150px;
+    min-height: 200px;
+  }
+  .imgCon {
+    width: 150px;
+    height: 200px;
+  }
+
 }
