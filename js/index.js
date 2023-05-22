@@ -17,12 +17,14 @@ let page = 1;
 let pageNr = "&page=" + page;
 let urlWithPageNr = url + pageNr;
 nextArrow.addEventListener("click", () => {
+  latestPosts.innerHTML="";
   page = page + 1;
   pageNr = "&page=" + page;
   urlWithPageNr = url + pageNr;
   renderCarousel();
 });
 backArrow.addEventListener("click", () => {
+  latestPosts.innerHTML="";
   page = page - 1;
   pageNr = "&page=" + page;
   urlWithPageNr = url + pageNr;
