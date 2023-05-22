@@ -763,6 +763,11 @@ form input,
     margin-top: -180px !important;
     cursor: default;
   }
+  /*blog post page*/
+  .blogCon{
+    max-width: 1300px;
+  }
+
 }
 @media screen and (max-width: 270px){
   /*home page*/
