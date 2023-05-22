@@ -411,7 +411,9 @@ form label,
   color: black;
 }
 .errorLabel {
-  color: red;
+  color: #B30000;
+  background-color: rgb(255, 255, 255,0.8);
+  border-radius: 10%;
   text-align: center;
   font-size: 1em;
   max-width: 180px;
@@ -501,7 +503,7 @@ form input,
 .comments input,
 #com,
 .publishCom {
-  background-color: white;
+  background-color: var(--lightblue);
   border: 3px solid black;
   min-width: 200px;
 }
@@ -513,20 +515,14 @@ form input,
   margin: 50px auto;
 }
 .comments input:focus,
-#com:focus {
+#com:focus,.publishCom:hover,
+.publishCom:focus {
   zoom: 130%;
   background-color: white;
   color: black;
 }
 .publishCom {
   height: 40px;
-}
-.publishCom:hover,
-.publishCom:focus {
-  background-color: var(--lightblue);
-  color: white;
-  zoom: 110%;
-  font-size: 24px;
 }
 .commentCard {
   background-color: white;
@@ -678,7 +674,9 @@ form input,
   .speCon,
   .comments {
     max-width: 1000px;
-    margin: 0 auto;
+  }
+  .comments{
+    margin: 0 auto 200px auto;
   }
   .speCon div {
     max-width: 700px;

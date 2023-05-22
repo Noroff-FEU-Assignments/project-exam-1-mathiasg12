@@ -43,7 +43,7 @@ function htmlContent(json) {
   }</div>`;
 }
 function htmlComments(json) {
-  return `<div class="commentCard"><div class="date"><h3>${
+  return `<div class="commentCard"><div class="dateComments"><h3>${
     json.author_name
   }</h3><h4>${formatDateComments(json.date)}</h4></div><div class="commentContent">${
     json.content.rendered
