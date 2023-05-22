@@ -193,7 +193,7 @@ figure {
   padding-bottom: 10px;
   margin: 10px auto;
   min-height: 260px;
-  box-shadow: 2px 2px 2px 2px var(--darkblue);
+  box-shadow: 2px 2px 2px 2px var(--lightblue);
 }
 .thumbnailLatest img {
   width: 200px;
@@ -281,7 +281,7 @@ figure {
  width: 80vw;
  height: 400px;
  background-color: white;
- box-shadow: 4px 4px 4px 4px var(--darkblue);
+ box-shadow: 4px 4px 4px 4px var(--lightblue);
  margin: 40px 10px;
 }
 /*blog posts page*/
@@ -421,14 +421,10 @@ form label,
 .errorInput {
   border: 4px solid red !important;
 }
-form input:focus,
-#text:focus {
-  background-color: white;
-}
 form input,
 #text {
   min-width: 200px;
-  background-color: var(--lightblue);
+  background-color: white;
   min-height: 30px;
   border: 2px solid black;
 }
@@ -440,8 +436,8 @@ form input,
 }
 .submitBtn:hover,
 .submitBtn:focus {
-  background-color: white;
-  color: black;
+  background-color: var(--lightblue);
+  color: white;
   font-size: 1.5em;
 }
 /*thank you page*/
@@ -462,7 +458,6 @@ form input,
 /*specific page*/
 .speCon {
   background-color: white;
-  padding: 20px;
   max-width: 100vw;
   overflow-x: hidden;
   padding-bottom: 40px;
@@ -516,7 +511,8 @@ form input,
 }
 .comments input:focus,
 #com:focus,.publishCom:hover,
-.publishCom:focus {
+.publishCom:focus,form input:focus,
+#text:focus {
   zoom: 130%;
   background-color: white;
   color: black;
@@ -538,17 +534,16 @@ form input,
 }
 .commentCard div {
   margin: 0;
-  padding: 10px;
-  background-color: grey;
+  padding: 8px;
+  background-color: lightgrey;
 }
 .commentContent {
-  min-height: 80px;
+  min-height: 60px;
   background-color: white !important;
   padding: 10px;
 }
 .commentContent p {
   margin: 0;
-  width: 240px !important;
 }
 
 @media screen and (min-width: 720px) {
@@ -675,6 +670,9 @@ form input,
   .comments {
     max-width: 1000px;
   }
+  .speCon{
+    padding-top: 100px;
+  }
   .comments{
     margin: 0 auto 200px auto;
   }
@@ -720,6 +718,11 @@ form input,
     font-size: 24px;
     font-weight: bold;
   }
+.comments input,
+#com,
+.publishCom {
+  min-width: 400px;
+}
   /*Forms: Contact page and specific page*/
   #com,
   #text {
@@ -765,6 +768,7 @@ form input,
   }
 }
 @media screen and (max-width: 270px){
+  /*home page*/
   .thumbFeatured{
     max-width: 150px;
     min-height: 200px;
@@ -773,5 +777,8 @@ form input,
     width: 150px;
     height: 200px;
   }
-
+  .comments input,#com,
+.publishCom {
+  min-width: 100px;
+}
 }

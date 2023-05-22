@@ -77,7 +77,7 @@ async function searchArray(searchResult) {
       );
       try {
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += html(posts, arrayPic, "thumbFeatured",formatDate(posts.date));
+        con.innerHTML += html(posts, arrayPic, "thumbFeatured",formatDateComments(posts.date));
       } catch (error) {
         console.log(error);
       }
