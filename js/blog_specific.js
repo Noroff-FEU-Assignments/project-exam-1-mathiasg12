@@ -32,9 +32,7 @@ let text = json.excerpt.rendered;
 let metaCon = document.createElement("div");
 let postId = json.id;
 let comments = await urlFunction(getCommentsUrl);
-console.log(comments);
 metaCon.innerHTML = text;
-console.log(json);
 function htmlContent(json) {
   return `<div><div class="date"><h1>${json.title.rendered}</h1><p>${formatDate(
     json.date
@@ -59,14 +57,12 @@ async function renderComments() {
     commentsCon.innerHTML = `<h3>No comments published</h3>`;
   }
 }
-renderComments();
 function renderBlog() {
   title.innerHTML = json.slug;
   metaDescription.setAttribute("content", `${metaCon.textContent}`);
   loader.style.display = "none";
   con.innerHTML = htmlContent(json);
 }
-renderBlog();
 document.addEventListener("click", (myClick) => {
   if (myClick.target.hasAttribute("srcset")) {
     myClick.target.classList.add("bigImage");
@@ -114,22 +110,24 @@ postBtn.addEventListener("click", async (reload) => {
       checkLength(5, nameInput),
       nameInput,
       nameLabel,
-      "Name"
+      "Name",
+      "inline"
     );
     lengthValidation(
       9,
       checkLength(9, commentField),
       commentField,
       commentLabel,
-      "Comment"
+      "Comment",
+      "inline"
     );
-    checkEmail(emailLabel,email);
+    checkEmail(emailLabel,email,"inline");
 }});
 email.addEventListener("change", () => {
-  checkEmail(emailLabel, email);
+  checkEmail(emailLabel, email,"inline");
 });
 nameInput.addEventListener("change", () => {
-  lengthValidation(5, checkLength(5, nameInput), nameInput, nameLabel, "Name");
+  lengthValidation(5, checkLength(5, nameInput), nameInput, nameLabel, "Name","inline");
 });
 commentField.addEventListener("change", () => {
   lengthValidation(
@@ -137,6 +135,9 @@ commentField.addEventListener("change", () => {
     checkLength(9, commentField),
     commentField,
     commentLabel,
-    "Comment"
+    "Comment",
+    "inline"
   );
 });
+renderBlog();
+renderComments();

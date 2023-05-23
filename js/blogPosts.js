@@ -14,27 +14,33 @@ const loader = document.querySelector(".loader");
 const sBtn = document.querySelector(".fa-magnifying-glass");
 let arrayWithPosts = await urlFunction(baseUrl + "?per_page=50");
 async function renderPosts(url) {
-  let array = await urlFunction(url);
-  loader.style.display = "none";
-  h2.style.display = "none";
-  if (array.length >= 0) {
-    for (let i = 0; i < array.length; i++) {
-      let posts = array[i];
-      let param = new URLSearchParams(posts);
-      let id = param.get("featured_media");
-      try {
+  try {
+    loadBtn.innerHTML = "LOAD MORE";
+    let array = await urlFunction(url);
+    loader.style.display = "none";
+    h2.style.display = "none";
+    if (array.length >= 0) {
+      for (let i = 0; i < array.length; i++) {
+        let posts = array[i];
+        let param = new URLSearchParams(posts);
+        let id = param.get("featured_media");
         let featuredPicture = await fetch(
           "https://exam1api.gamehubstore.live/wp-json/wp/v2/media/" + id
         );
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += html(posts, arrayPic, "thumbFeatured", formatDateComments(posts.date));
-      } catch (error) {
-        console.log(error);
+        con.innerHTML += html(
+          posts,
+          arrayPic,
+          "thumbFeatured",
+          formatDateComments(posts.date)
+        );
       }
+    } else {
+      loadBtn.disabled = true;
+      loadBtn.innerHTML = "You reached the end";
     }
-  } else {
-    con.innerHTML += `<h2>You reached the end!</h2>`;
-    loadBtn.disabled = true;
+  } catch (error) {
+    console.log(error);
   }
 }
 renderPosts(urlWithPageNr);
@@ -64,27 +70,32 @@ loadBtn.addEventListener("click", () => {
   }
 });
 async function searchArray(searchResult) {
-  let array = searchResult;
-  h2.innerHTML = " ";
-  h2.style.display = "none";
-  if (array.length >= 1) {
-    for (let i = 0; i < array.length; i++) {
-      let posts = array[i];
-      let param = new URLSearchParams(posts);
-      let id = param.get("featured_media");
-      let featuredPicture = await fetch(
-        "https://exam1api.gamehubstore.live/wp-json/wp/v2/media/" + id
-      );
-      try {
+  try {
+    let array = searchResult;
+    h2.innerHTML = " ";
+    h2.style.display = "none";
+    if (array.length >= 1) {
+      for (let i = 0; i < array.length; i++) {
+        let posts = array[i];
+        let param = new URLSearchParams(posts);
+        let id = param.get("featured_media");
+        let featuredPicture = await fetch(
+          "https://exam1api.gamehubstore.live/wp-json/wp/v2/media/" + id
+        );
         let arrayPic = await featuredPicture.json();
-        con.innerHTML += html(posts, arrayPic, "thumbFeatured",formatDateComments(posts.date));
-      } catch (error) {
-        console.log(error);
+        con.innerHTML += html(
+          posts,
+          arrayPic,
+          "thumbFeatured",
+          formatDateComments(posts.date)
+        );
       }
+    } else {
+      con.innerHTML += `<h2>You reached the end!</h2>`;
+      loadBtn.disabled = true;
     }
-  } else {
-    con.innerHTML += `<h2>You reached the end!</h2>`;
-    loadBtn.disabled = true;
+  } catch (error) {
+    console.log(error);
   }
 }
 search.addEventListener("keypress", (press) => {
@@ -93,6 +104,7 @@ search.addEventListener("keypress", (press) => {
   }
 });
 sBtn.addEventListener("click", () => {
+  loadBtn.innerHTML = "LOAD MORE";
   let searchValue = search.value.toLowerCase().trim();
   let searchResult = arrayWithPosts.filter((search) => {
     if (search.title.rendered.toLowerCase().includes(searchValue)) {

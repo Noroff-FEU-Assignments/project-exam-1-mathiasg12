@@ -17,14 +17,16 @@ let page = 1;
 let pageNr = "&page=" + page;
 let urlWithPageNr = url + pageNr;
 nextArrow.addEventListener("click", () => {
-  latestPosts.innerHTML="";
+  nextArrow.style.pointerEvents = "none";
+  latestPosts.innerHTML = "";
   page = page + 1;
   pageNr = "&page=" + page;
   urlWithPageNr = url + pageNr;
   renderCarousel();
 });
 backArrow.addEventListener("click", () => {
-  latestPosts.innerHTML="";
+  backArrow.style.pointerEvents = "none";
+  latestPosts.innerHTML = "";
   page = page - 1;
   pageNr = "&page=" + page;
   urlWithPageNr = url + pageNr;
@@ -52,6 +54,11 @@ async function renderCarousel() {
           "thumbnailLatest",
           formatDate(posts.date)
         );
+        let countDivs = latestPosts.getElementsByTagName("a").length;
+        if (countDivs === 4) {
+          backArrow.style.pointerEvents = "auto";
+          nextArrow.style.pointerEvents = "auto";
+        }
       } catch (error) {
         console.log(error);
       }

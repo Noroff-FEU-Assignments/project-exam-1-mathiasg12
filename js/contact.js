@@ -7,22 +7,22 @@ const subjectLabel = document.querySelector("#subjectL");
 const message = document.querySelector("#text");
 const messageLabel = document.querySelector("#textL");
 const sendBtn = document.querySelector(".submitBtn");
-const form= document.querySelector("form");
+const form = document.querySelector("form");
 import { checkLength } from "./function.js";
 import { emailValidation } from "./function.js";
 import { checkEmail } from "./function.js";
-import { lengthValidation} from "./function.js";
-const thankYouMessage= `<section class="mainContent thank_you"><h2>Thank you</h2>
-<p> Thank you for your message. I will answer as soon as possible by email</p></section> `
+import { lengthValidation } from "./function.js";
+const thankYouMessage = `<section class="mainContent thank_you"><h2>Thank you</h2>
+<p> Thank you for your message. I will answer as soon as possible by email</p></section> `;
 sendBtn.addEventListener("click", (reload) => {
   reload.preventDefault();
   if (
     checkLength(5, nameInput) &&
     checkLength(25, message) &&
-    (emailValidation() === true) &&
+    emailValidation() === true &&
     checkLength(15, subject)
   ) {
-   form.innerHTML= thankYouMessage;
+    form.innerHTML = thankYouMessage;
     window.scrollTo(0, 0);
   } else {
     lengthValidation(
@@ -30,30 +30,40 @@ sendBtn.addEventListener("click", (reload) => {
       checkLength(5, nameInput),
       nameInput,
       nameLabel,
-      "Name"
+      "Name",
+      "none"
     );
     lengthValidation(
       15,
       checkLength(15, subject),
       subject,
       subjectLabel,
-      "Subject"
+      "Subject",
+      "none"
     );
     lengthValidation(
       25,
       checkLength(25, message),
       message,
       messageLabel,
-      "Message"
+      "Message",
+      "none"
     );
-    checkEmail(emailLabel,email);
+    checkEmail(emailLabel, email, "none");
   }
 });
 email.addEventListener("change", () => {
-  checkEmail(emailLabel,email);
+  checkEmail(emailLabel, email, "none");
 });
 nameInput.addEventListener("change", () => {
-  lengthValidation(5, checkLength(5, nameInput), nameInput, nameLabel, "Name");
+  lengthValidation(
+    5,
+    checkLength(5, nameInput),
+    nameInput,
+    nameLabel,
+    "Name",
+    "none"
+  );
 });
 subject.addEventListener("change", () => {
   lengthValidation(
@@ -61,7 +71,8 @@ subject.addEventListener("change", () => {
     checkLength(15, subject),
     subject,
     subjectLabel,
-    "Subject"
+    "Subject",
+    "none"
   );
 });
 message.addEventListener("change", () => {
@@ -70,6 +81,7 @@ message.addEventListener("change", () => {
     checkLength(25, message),
     message,
     messageLabel,
-    "Message"
+    "Message",
+    "none"
   );
 });

@@ -68,10 +68,10 @@ function emailValidation() {
   const emailVal = email.value;
   return format.test(emailVal);
 }
-function checkEmail(emailLabel, email) {
+function checkEmail(emailLabel, email, display) {
   if (emailValidation() === true) {
     emailLabel.innerHTML = "Email";
-    emailLabel.style.display="none"
+    emailLabel.style.display= display;
     emailLabel.classList.remove("errorLabel");
     email.classList.remove("errorInput");
   } else {
@@ -81,10 +81,10 @@ function checkEmail(emailLabel, email) {
     email.classList.add("errorInput");
   }
 }
-function lengthValidation(min, checkLength, input, label, orgName) {
+function lengthValidation(min, checkLength, input, label, orgName, display) {
   if (checkLength === true) {
     label.innerHTML = orgName;
-    label.style.display="none"
+    label.style.display= display;
     label.classList.remove("errorLabel");
     input.classList.remove("errorInput");
   } else {

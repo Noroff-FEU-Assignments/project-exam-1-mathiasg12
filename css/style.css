@@ -9,6 +9,9 @@ body {
   width: 100vw !important;
   overflow-x: hidden !important;
 }
+html {
+  overflow-x: hidden;
+}
 @font-face {
   font-family: "Whitefish";
   src: url(/fonts/Whitefish\ FREE.ttf) format("truetype");
@@ -76,7 +79,7 @@ h3 {
   width: fit-content;
   text-align: center;
   font-weight: 590;
-  margin: 80px auto 15px auto;
+  margin: 50px auto 15px auto;
 }
 h3 {
   font-size: 1.5em;
@@ -135,7 +138,7 @@ nav {
   max-width: 80vw;
 }
 figure {
-  cursor: pointer;
+  cursor: zoom-in;
 }
 /*Home page*/
 .indexMain {
@@ -176,7 +179,8 @@ figure {
   padding-top: 100px;
   padding-bottom: 50px;
 }
-.latest_posts,.recomendedCon {
+.latest_posts,
+.recomendedCon {
   background-color: var(--lightblue2);
 }
 .latestCon {
@@ -241,7 +245,8 @@ figure {
   opacity: 100%;
   font-size: 46px;
 }
-.blogCon {
+.blogCon,
+.featuredCon {
   display: flex;
   flex-wrap: wrap;
   width: fit-content;
@@ -249,15 +254,14 @@ figure {
   margin: 20px auto;
   max-width: 90vw;
 }
-.featuredCon,
-.recoCon{
+.recoCon {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   justify-items: center;
   margin: 0 auto;
 }
-.thumbFeatured{
+.thumbFeatured {
   background-color: white;
   box-shadow: 4px 4px 4px 4px var(--darkblue);
   margin: 40px 10px;
@@ -270,19 +274,19 @@ figure {
 }
 .thumbFeatured img,
 .recoCon img {
-  width: 100% ;
+  width: 100%;
   height: 100%;
 }
-.thumbReco div{
+.thumbReco div {
   width: 80vw;
   height: 300px;
 }
 .thumbReco {
- width: 80vw;
- height: 400px;
- background-color: white;
- box-shadow: 4px 4px 4px 4px var(--lightblue);
- margin: 40px 10px;
+  width: 80vw;
+  height: 400px;
+  background-color: white;
+  box-shadow: 4px 4px 4px 4px var(--lightblue);
+  margin: 40px 10px;
 }
 /*blog posts page*/
 .results {
@@ -362,19 +366,26 @@ figure {
   margin: 0 auto;
   width: fit-content;
 }
+table h3 {
+  font-size: 1em;
+}
 table,
 tr,
 td {
-  border: 2px solid black;
+  border: 2px solid white;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
+  margin: 0 auto;
 }
 .tableCon {
   overflow-x: auto;
   margin-bottom: 20px;
 }
 .diffSize {
-  margin: 30px auto 100px auto;
+  margin: 0 auto 100px auto;
+  background-color: var(--darkblue);
+  color: white;
+  text-align: center;
 }
 /*Contact page*/
 form,
@@ -411,8 +422,8 @@ form label,
   color: black;
 }
 .errorLabel {
-  color: #B30000;
-  background-color: rgb(255, 255, 255,0.8);
+  color: #b30000;
+  background-color: rgb(255, 255, 255, 0.8);
   border-radius: 10%;
   text-align: center;
   font-size: 1em;
@@ -440,7 +451,7 @@ form input,
   color: white;
   font-size: 1.5em;
 }
-/*thank you page*/
+/*thank you message*/
 .thank_you {
   display: flex;
   flex-direction: column;
@@ -510,8 +521,10 @@ form input,
   margin: 50px auto;
 }
 .comments input:focus,
-#com:focus,.publishCom:hover,
-.publishCom:focus,form input:focus,
+#com:focus,
+.publishCom:hover,
+.publishCom:focus,
+form input:focus,
 #text:focus {
   zoom: 130%;
   background-color: white;
@@ -545,7 +558,6 @@ form input,
 .commentContent p {
   margin: 0;
 }
-
 @media screen and (min-width: 720px) {
   main {
     margin-top: 350px;
@@ -624,20 +636,8 @@ form input,
   .arrows {
     width: 600px;
   }
-  .featuredCon{
-  grid-template-columns: 1fr 1fr;
-  max-width: 700px;
-}
-.recoCon{
-  grid-template-columns: 1fr;
-}
-  /*About page*/
-  .mainContent {
-    max-width: 700px;
-  }
-  /*minimum size page*/
-  .measuring img {
-    max-width: 100%;
+  .recoCon {
+    grid-template-columns: 1fr;
   }
   .thumbnailLatest {
     margin: 0;
@@ -662,15 +662,26 @@ form input,
   .recoCon img {
     width: 576px;
   }
+  /*About page*/
+  .mainContent {
+    max-width: 700px;
+  }
+  /*minimum size page*/
+  .measuring img {
+    max-width: 100%;
+  }
+  table h3 {
+    font-size: 1.5em;
+  }
   /*specific page*/
   .speCon,
   .comments {
     max-width: 1000px;
   }
-  .speCon{
+  .speCon {
     padding-top: 100px;
   }
-  .comments{
+  .comments {
     margin: 0 auto 200px auto;
   }
   .speCon div {
@@ -715,11 +726,11 @@ form input,
     font-size: 24px;
     font-weight: bold;
   }
-.comments input,
-#com,
-.publishCom {
-  min-width: 400px;
-}
+  .comments input,
+  #com,
+  .publishCom {
+    min-width: 400px;
+  }
   /*Forms: Contact page and specific page*/
   #com,
   #text {
@@ -748,10 +759,10 @@ form input,
     grid-template-columns: auto auto auto auto;
     max-width: 1500px;
   }
-  .featuredCon{
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 1200px;
-}
+  .blogCon,
+  .featured {
+    max-width: 1300px;
+  }
   /*specific page*/
   .bigImage {
     width: 800px !important;
@@ -763,15 +774,10 @@ form input,
     margin-top: -180px !important;
     cursor: default;
   }
-  /*blog post page*/
-  .blogCon{
-    max-width: 1300px;
-  }
-
 }
-@media screen and (max-width: 270px){
+@media screen and (max-width: 270px) {
   /*home page*/
-  .thumbFeatured{
+  .thumbFeatured {
     max-width: 150px;
     min-height: 200px;
   }
@@ -779,8 +785,9 @@ form input,
     width: 150px;
     height: 200px;
   }
-  .comments input,#com,
-.publishCom {
-  min-width: 100px;
-}
+  .comments input,
+  #com,
+  .publishCom {
+    min-width: 100px;
+  }
 }
