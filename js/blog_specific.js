@@ -22,17 +22,13 @@ const con = document.querySelector(".speCon");
 const commentsCon = document.querySelector(".commentsCon");
 const loader = document.querySelector(".loader");
 const title = document.querySelector("title");
-const metaDescription = document.querySelector("meta[name=description]");
 const userUrl = "https://exam1api.gamehubstore.live/wp-json/wp/v2/users/";
 const commentUrl = "https://exam1api.gamehubstore.live/wp-json/wp/v2/comments";
 const getCommentsUrl = commentUrl + "?post=" + idParameter;
 const form = document.querySelector("form");
 let author = await urlFunction(userUrl + json.author);
-let text = json.excerpt.rendered;
-let metaCon = document.createElement("div");
 let postId = json.id;
 let comments = await urlFunction(getCommentsUrl);
-metaCon.innerHTML = text;
 function htmlContent(json) {
   return `<div><div class="date"><h1>${json.title.rendered}</h1><p>${formatDate(
     json.date
@@ -59,7 +55,6 @@ async function renderComments() {
 }
 function renderBlog() {
   title.innerHTML = json.slug;
-  metaDescription.setAttribute("content", `${metaCon.textContent}`);
   loader.style.display = "none";
   con.innerHTML = htmlContent(json);
 }
