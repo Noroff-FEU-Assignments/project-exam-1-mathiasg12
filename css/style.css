@@ -144,6 +144,9 @@ figure {
 .indexMain {
   margin-top: 130px;
 }
+.on{
+  text-decoration: underline solid white 4px;
+}
 .date {
   margin: 5px auto 0 auto;
   height: fit-content !important;
@@ -589,11 +592,15 @@ form input:focus,
     margin-bottom: 0;
   }
   nav ul li {
+    pointer-events: none;
     margin: 0 0 10px 30px;
-    border: 2px solid white;
-    padding: 10px;
-    min-width: 116px;
+    min-width: fit-content;
     text-align: center;
+    padding: 10px;
+  }
+  nav ul li a{
+    pointer-events: auto;
+    font-size: 30px;
   }
   nav ul li:first-child {
     margin-left: 0;
@@ -619,10 +626,11 @@ form input:focus,
     0% {
     }
     100% {
-      background-color: black;
+      color: black;
+      text-decoration: black;
     }
   }
-  nav li:hover {
+  nav li a:hover {
     animation-name: navAnimation;
     animation-delay: 0.2s;
     animation-duration: 1s;
