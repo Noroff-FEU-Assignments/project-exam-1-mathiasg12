@@ -179,8 +179,8 @@ figure {
 .featured,
 .latest_posts {
   margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .latest_posts,
 .recomendedCon {
