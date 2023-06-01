@@ -1,67 +1,58 @@
-## Project Exam 1
+# Project Exam 1 (Fishing in Norway)
 
-## Goal
+![image](/pictures/ex1%20screen.png)
 
-To put into practice the skills learned over your first year of studies.
+## Description
 
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
--	Home page
--	About page
--	List of blog posts
--	Blog post specific pages
--	Contact page.
+This is a website built for a fictional blog called Fishing in Norway and is a school exam. The site is responsive, WCAG compliant, and is made using JS, CSS, and HTML. The Website has a total of six pages the homepage, contact page, about us page, the minimum size of fish page, posts page, and a page to read posts depending on which post a user clicks on. The site uses WordPress to store posts, pictures, and comments. The color scheme of the site is mainly different shades of blue, white for the text background, and black for the text. The layout of the site is mainly a four-column grid for desktop and a single-column grid for mobile.  
 
-### Home Page
-The home page should have a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. For example, by default the user can see four posts, then they can click an arrow on the right to view the next four posts, and click it again to view the next four posts. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+### The homepage:
+The homepage has four sections, an introduction section, the latest posts, featured posts, and recommended posts. 
 
-### Blog Page
+### The Contact page:
+The contact page has two sections one with information about contacting the blog owner and the second section has a contact form.
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+### The About Us page:
+The about us page has one section with short information about the blog and two links to other pages.
 
-### Blog Specific Page
+### The minimum size page: 
+The minimum size page has two sections one with information about why Norway has a minimum size of fish and the second section has a table with some of the minimum sizes on common fish.
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+### Posts page:
+The posts page renders a list of all posts in a four-column grid for desktop and a single-column grid for mobile.
 
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+### Blog post page:
+The blog post page dynamically displays a blog post a user has clicked on. And has two sections, the blog post it self and a comment section.
 
-### Contact page
 
-Create a contact us page, there should be 4 textboxes on this page.
--	Name (Should be more than 5 characters long)
--	Email address (Must be a valid email address)
--	Subject (Should be more than 15 characters long)
--	Message content (Should be more than 25 characters long)
+### Design
+- colors: different shades of blue, black and white
+- grid: four column grid for desktop, single column for mobile
+- fonts: Wisdom World for logo, Whitefish for headings and nav elements and Roboto for text
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+### Functionality
+- Data fetched from WordPress using the REST API
+- Carousel on index that displays four and four posts
+- Search Bar made with JS
+- Sorting on Posts page
+- Dynamically built blog post pages using JS
+- Comments, using JS and WP
+- Contact form
+- picture Modal on blog post page
+- form validation using JS
 
-### WordPress
+## Built With
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
+- JS
+- CSS
+- HTML
+- WorldPress
 
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
+### Running
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
+https://cerulean-quokka-d4c5df.netlify.app
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
+## Contact
 
-## Level 1 Process
-
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
-
-1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
+My email address: mathiasgausl@gmail.com
 
